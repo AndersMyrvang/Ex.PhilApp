@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { auth } from "@/firebase/config";
 import {
@@ -14,9 +14,25 @@ import styles from "./login.module.css";
 
 export default function Home() {
   const router = useRouter();
+  const [loading, setLoading] = useState(true);
   const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        router.push('/home');
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, [router]);
+
+  if (loading) {
+    return <div className={styles.container}>Loading...</div>;
+  }
 
   // Håndter registrering med e-post, display name og passord
   const handleSignUpWithEmail = async (e: React.FormEvent) => {

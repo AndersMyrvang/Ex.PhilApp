@@ -1,35 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { auth } from "@/firebase/config";
+import React from "react";
+import styles from "./home.module.css";
 
-export default function HomePage() {
-  const router = useRouter();
-
-  useEffect(() => {
-    // Check if user is logged in
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (!user) {
-        router.push("/");
-      }
-    });
-
-    return () => unsubscribe();
-  }, [router]);
-
+export default function Home() {
   return (
-    <div className="p-8">
-      <h1 className="text-2xl font-bold mb-4">Welcome, {auth.currentUser?.displayName}!</h1>
-      <button 
-        onClick={() => {
-          auth.signOut();
-          router.push("/");
-        }}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-      >
-        Sign Out
-      </button>
+    <div className={styles.container}>
+      <main className={styles.main}>
+        <section className={styles.hero}>
+          <h2 className={styles.subtitle}>Discover, Share, and Connect</h2>
+          <p className={styles.description}>
+            ExPhil is a platform for sharing your ideas and connecting with like-minded people.
+          </p>
+          <button className={styles.ctaButton}>Get Started</button>
+        </section>
+      </main>
     </div>
   );
 }
