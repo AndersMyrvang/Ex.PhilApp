@@ -12,12 +12,16 @@ export default function Header() {
   const [user, setUser] = useState<any>(null);
   const router = useRouter();
 
-  // Åpne/lukke drop-down
+  // Toggle dropdown only if user is logged in
   const toggleDropdown = () => {
+    if (!user) {
+      alert("du må logge inn for å ta eksamener");
+      return;
+    }
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // Lytt på endringer i innlogget bruker (Firebase)
+  // Listen for auth state changes (Firebase)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -25,7 +29,7 @@ export default function Header() {
     return () => unsubscribe();
   }, []);
 
-  // Ruting til profilside
+  // Route to profile page
   const routeProfile = async () => {
     try {
       router.push("/profile");
@@ -34,10 +38,19 @@ export default function Header() {
     }
   };
 
-  // Ruting til innloggingsside
-  const handleLogin = async () => {
+  // Route to login page
+  const routeLogin = async () => {
     try {
-      router.push("/login");
+      router.push("/");
+    } catch (error) {
+      console.error("Feil ved innlogging:", error);
+    }
+  };
+
+   // Route to home page
+   const routeHome = async () => {
+    try {
+      router.push("/home");
     } catch (error) {
       console.error("Feil ved innlogging:", error);
     }
@@ -46,18 +59,17 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        
-        {/* Venstre: Hjem-knapp */}
+        {/* Left: Home button */}
         <div className={styles.left}>
-          <Link href="/">
-            <span className={styles.homeButton}>Hjem</span>
-          </Link>
+        <button onClick={routeHome} className={styles.profileButton}>
+              Hjem
+            </button>
         </div>
 
-        {/* Midten: Drop-down med eksamener */}
+        {/* Middle: Dropdown for exams */}
         <div className={styles.middle}>
           <div className={styles.dropdown}>
-            <button onClick={toggleDropdown} className={styles.dropdownButton}>
+            <button onClick={toggleDropdown} className={styles.profileButton}>
               Eksamener
             </button>
             {isDropdownOpen && (
@@ -71,25 +83,24 @@ export default function Header() {
                 <li>
                   <Link href="/eksamen3">Eksamen 3</Link>
                 </li>
-                {/* Legg til flere eksamensider etter behov */}
+                {/* Add more exam pages as needed */}
               </ul>
             )}
           </div>
         </div>
 
-        {/* Høyre: Profil- eller innloggingsknapp */}
+        {/* Right: Profile or login button */}
         <div className={styles.right}>
           {user ? (
             <button onClick={routeProfile} className={styles.profileButton}>
               Profile
             </button>
           ) : (
-            <button onClick={handleLogin} className={styles.profileButton}>
+            <button onClick={routeLogin} className={styles.profileButton}>
               Logg inn
             </button>
           )}
         </div>
-
       </nav>
     </header>
   );
