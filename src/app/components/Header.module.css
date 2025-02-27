@@ -1,18 +1,18 @@
-/* Generelt for headeren */
+/* Overall header styling */
 .header {
-  background-color: #ffffff;
+  background-color: #f6f8fa; /* A light GitHub-like background */
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #d0d7de;
 }
 
-/* Flex-container for å fordele innhold */
+/* Nav container */
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* Venstre, midten og høyre seksjoner */
+/* Left, middle, right sections */
 .left,
 .middle,
 .right {
@@ -20,79 +20,116 @@
   align-items: center;
 }
 
-/* Hjem-knapp og profil-knapp kan ha lik stil */
-.homeButton,
-.profileButton {
+/* Page title on the left */
+.pageTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #24292f;
+}
+
+/* Middle section */
+.middle {
+  gap: 1rem;
+}
+
+/* Common button/link styling */
+.navButton,
+.resultsLink {
   cursor: pointer;
-  margin: 0 1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  color: #24292f;
+  text-decoration: none;
   transition: background-color 0.2s ease;
-  font-weight: 500;
+  margin-right: 0.5rem;
 }
 
-/* Hover-effekt */
-.homeButton:hover,
-.profileButton:hover {
-  background-color: #ddd;
+/* Hover effect for buttons/links */
+.navButton:hover,
+.resultsLink:hover {
+  background-color: #f3f4f6;
 }
 
-/* Drop-down container */
+/* Dropdown container */
 .dropdown {
   position: relative;
 }
 
-/* Selve knappen for å åpne/lukke drop-down */
-.dropdownButton {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  background-color: #f0f0f0;
-  border: none;
-  border-radius: 9999px;
-  transition: background-color 0.2s ease;
-  font-weight: 500;
-}
-
-.dropdownButton:hover {
-  background-color: #ddd;
-}
-
-/* Listen som dukker opp */
+/* Dropdown menu styling */
 .dropdownMenu {
   position: absolute;
-  top: 2.5rem; /* justér etter eget ønske */
+  top: 2rem;
   left: 0;
   background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
   list-style: none;
   margin: 0;
   padding: 0.5rem 0;
-  width: 150px; /* justér bredde etter eget ønske */
+  width: 150px;
   z-index: 9999;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
-/* Hvert element i menyen */
+/* Dropdown menu items */
 .dropdownMenu li {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #d0d7de;
 }
 
-/* Fjern border fra siste element for penere utseende */
 .dropdownMenu li:last-child {
   border-bottom: none;
 }
 
-/* Lenker i menyen */
 .dropdownMenu li a {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   text-decoration: none;
-  color: #333;
+  color: #24292f;
+  font-size: 0.9rem;
   transition: background-color 0.2s ease;
 }
 
-/* Hover-effekt på lenkene */
 .dropdownMenu li a:hover {
-  background-color: #f0f0f0;
+  background-color: #f3f4f6;
+}
+
+/* Right section: profile photo container */
+.profilePhotoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Actual profile photo */
+.profilePhoto {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #d0d7de;
+}
+
+/* Placeholder if user has no photoURL */
+.profilePhotoPlaceholder {
+  width: 32px;
+  height: 32px;
+  background-color: #cbd5e1;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d0d7de;
+}
+
+.profileText{
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #24292f;
 }

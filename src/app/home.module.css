@@ -1,0 +1,89 @@
+/* Wrapper for the entire page */
+.pageWrapper {
+  background-color: #2d2d2d; /* Dark background */
+  color: #fff;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* HERO SECTION */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 400px; /* Adjust hero height as needed */
+  background: url("../../public/Tenk.jpg") center/cover no-repeat;
+  /* ^ Replace with your own image path or external URL */
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.heroOverlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.heroOverlay p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* FEATURES SECTION */
+.featuresSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.featureCard {
+  background-color: #3f3f3f;
+  flex: 1 1 250px; /* Cards grow to fill space, min 250px wide */
+  max-width: 350px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.featureCard h2 {
+  margin-bottom: 0.75rem;
+}
+
+.featureCard p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.featureCard:hover {
+  background-color: #505050;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #3f3f3f;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}

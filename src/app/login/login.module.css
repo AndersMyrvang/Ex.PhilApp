@@ -1,0 +1,166 @@
+/* Container fills entire viewport with a background image */
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* Replace this with the path to your image */
+  background: url("../../../public/bakgrunnLogin.png") center/cover no-repeat;
+  /* If you want the image to stay fixed on scroll:
+     background-attachment: fixed; 
+  */
+  margin: 0;
+  padding: 2%;
+}
+
+/* Optional overlay to darken/lighten the background image */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 0.5 = 50% darkness */
+  z-index: 1;
+}
+
+/* Card (login form) */
+.card {
+  position: relative;
+  z-index: 2; /* On top of the overlay */
+  width: 100%;
+  max-width: 28rem; /* ~448px */
+  padding: 2rem;
+  /* Darken the background and add partial opacity */
+  background-color: rgba(30, 30, 30, 0.9);
+  color: #fff;
+  /* Slightly smaller border-radius for a sharper look */
+  border-radius: 0.25rem; /* ~ rounded-md */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow for dark background */
+}
+
+/* Title and subtitle */
+.title {
+  font-size: 1.5rem; /* ~ text-2xl */
+  font-weight: 700;  /* ~ font-bold */
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.125rem; /* ~ text-lg */
+  font-weight: 600;    /* ~ font-semibold */
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Form layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Labels */
+.label {
+  display: block;
+  font-size: 0.875rem; /* ~ text-sm */
+  font-weight: 500;    /* ~ font-medium */
+  margin-bottom: 0.25rem;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem; /* ~ rounded-md */
+  outline: none;
+}
+
+.input:focus {
+  border-color: #3b82f6; /* ~ ring-blue-500 */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Button (Sign up with email) */
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2563eb; /* ~ bg-blue-600 */
+  border-radius: 0.375rem;   /* ~ rounded-md */
+  cursor: pointer;
+  margin-top: 0.5rem;
+  border: none;
+}
+
+.button:hover {
+  background-color: #1d4ed8; /* ~ bg-blue-700 */
+}
+
+/* Separator (hr) container */
+.hrContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  gap: 0.5rem;
+}
+
+/* Horizontal rules */
+.hr {
+  flex-shrink: 0;
+  width: 20%;
+  border: 1px solid #d1d5db; /* ~ border-gray-300 */
+}
+
+.hrText {
+  font-size: 0.875rem; /* ~ text-sm */
+  color: #6b7280;      /* ~ text-gray-500 */
+}
+
+/* Google button */
+.googleButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 600;
+  color: #374151;       /* ~ text-gray-700 */
+  background-color: #f3f4f6; /* ~ bg-gray-100 */
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.googleButton:hover {
+  background-color: #e5e7eb; /* ~ bg-gray-200 */
+}
+
+/* Google icon size */
+.googleIcon {
+  width: 1.25rem; /* ~ w-5 */
+  height: 1.25rem; /* ~ h-5 */
+  margin-right: 0.5rem;
+}
+
+/* Terms text */
+.terms {
+  margin-top: 1rem;
+  font-size: 0.75rem; /* ~ text-xs */
+  text-align: center;
+  color: #6b7280;     /* ~ text-gray-500 */
+}
+
+.terms a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.terms a:hover {
+  color: #2563eb;     /* ~ text-blue-600 */
+}

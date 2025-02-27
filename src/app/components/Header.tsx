@@ -2,17 +2,45 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "./Header.module.css";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebase/config";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
+
+// A small helper function to map the pathname to a readable title
+function getPageTitle(pathname: string): string {
+  switch (pathname) {
+    case "/":
+      return "Home";
+    case "/login":
+      return "login";
+    case "/results":
+      return "Resultater";
+    case "/eksamen1":
+      return "Eksamen 1";
+    case "/eksamen2":
+      return "Eksamen 2";
+    case "/eksamen3":
+      return "Eksamen 3";
+    case "/eksamen4":
+      return "Eksamen 4";
+    case "/profile":
+      return "Min Profil";
+    default:
+      return "ExPhil App"; // fallback if you have other routes
+  }
+}
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
   const router = useRouter();
+  const pathname = usePathname(); // Hook to get current path
 
-  // Toggle dropdown only if user is logged in
+  const pageTitle = getPageTitle(pathname);
+
   const toggleDropdown = () => {
     if (!user) {
       alert("du må logge inn for å ta eksamener");
@@ -21,7 +49,6 @@ export default function Header() {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  // Listen for auth state changes (Firebase)
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -29,47 +56,49 @@ export default function Header() {
     return () => unsubscribe();
   }, []);
 
-  // Route to profile page
-  const routeProfile = async () => {
-    try {
-      router.push("/profile");
-    } catch (error) {
-      console.error("Feil ved routing til profile:", error);
-    }
-  };
-
-  // Route to login page
   const routeLogin = async () => {
     try {
-      router.push("/");
+      router.push("/login"); 
+    } catch (error) {
+      console.error("Feil ved innlogging:", error);
+    }
+  };
+  const routeHome = async () => {
+    try {
+      router.push("/"); 
     } catch (error) {
       console.error("Feil ved innlogging:", error);
     }
   };
 
-   // Route to home page
-   const routeHome = async () => {
+  const routeResults = async () => {
+    if (!user) {
+      alert("du må logge inn for å se resultater");
+      return;
+    }
     try {
-      router.push("/home");
+      router.push("/results"); 
     } catch (error) {
       console.error("Feil ved innlogging:", error);
     }
-  };
+  }
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        {/* Left: Home button */}
+
+        {/* Left: Current page title */}
         <div className={styles.left}>
-        <button onClick={routeHome} className={styles.profileButton}>
-              Hjem
-            </button>
+          <button onClick={routeHome} className={styles.navButton}>
+          <i className="bi bi-house"></i>
+          </button>
+          <span className={styles.pageTitle}>{pageTitle}</span>
         </div>
 
-        {/* Middle: Dropdown for exams */}
+        {/* Middle: Eksamener dropdown + Resultater link */}
         <div className={styles.middle}>
           <div className={styles.dropdown}>
-            <button onClick={toggleDropdown} className={styles.profileButton}>
+            <button onClick={toggleDropdown} className={styles.navButton}>
               Eksamener
             </button>
             {isDropdownOpen && (
@@ -83,20 +112,37 @@ export default function Header() {
                 <li>
                   <Link href="/eksamen3">Eksamen 3</Link>
                 </li>
-                {/* Add more exam pages as needed */}
+                <li>
+                  <Link href="/eksamen4">Eksamen 4</Link>
+                </li>
               </ul>
             )}
           </div>
+
+          <button onClick={routeResults} className={styles.navButton}>
+            Resultater
+          </button>
         </div>
 
-        {/* Right: Profile or login button */}
+        {/* Right: Profile photo (if logged in) or Logg inn */}
         <div className={styles.right}>
           {user ? (
-            <button onClick={routeProfile} className={styles.profileButton}>
-              Profile
-            </button>
+            // If user is logged in, show profile photo
+            <Link href="/profile" className={styles.profilePhotoContainer}>
+              {user.photoURL ? (
+                <img
+                  src={user.photoURL}
+                  alt="Profile"
+                  className={styles.profilePhoto}
+                />
+              ) : (
+                <div className={styles.profilePhotoPlaceholder}>
+                  {user.displayName?.charAt(0) || "U"}
+                </div>
+              )}
+            </Link>
           ) : (
-            <button onClick={routeLogin} className={styles.profileButton}>
+            <button onClick={routeLogin} className={styles.navButton}>
               Logg inn
             </button>
           )}

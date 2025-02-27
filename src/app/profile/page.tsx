@@ -4,9 +4,11 @@ import React, { useEffect, useState } from "react";
 import styles from "./profile.module.css";
 import { onAuthStateChanged, signOut, User } from "firebase/auth";
 import { auth } from "@/firebase/config";
+import { useRouter } from "next/navigation";
 
 export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null);
+    const router = useRouter();
 
   // Listen for Firebase auth state changes
   useEffect(() => {
@@ -27,6 +29,7 @@ export default function ProfilePage() {
   const handleLogout = async () => {
     try {
       await signOut(auth);
+      router.push("/");
     } catch (error) {
       console.error("Error signing out:", error);
     }
