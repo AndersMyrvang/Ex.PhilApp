@@ -2,6 +2,7 @@
     width: 100%;
     max-width: 400px;
     margin: 2rem auto;
+    height: 21rem;
     background-color: #ccc9d5; /* a light greyish purple */
     padding: 2rem;
     border-radius: 8px;
@@ -11,6 +12,7 @@
   /* Profile photo container */
   .profilePhotoContainer {
     margin-bottom: 1rem;
+    padding: 2rem;
   }
   
   .profilePhoto {
