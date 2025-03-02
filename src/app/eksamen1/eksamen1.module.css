@@ -1,0 +1,17 @@
+/* eksamen1/eksamen1.module.css */
+.pageContainer {
+    padding: 20px;
+  }
+  
+  .loading {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
