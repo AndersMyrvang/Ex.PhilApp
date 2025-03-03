@@ -21,7 +21,6 @@ const Eksamen1Page: React.FC = () => {
   const [userId, setUserId] = useState<string | null>(null);
   const examId = "exam_1";
 
-  // Listen for authentication state changes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {

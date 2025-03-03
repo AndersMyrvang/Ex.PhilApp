@@ -33,7 +33,6 @@ export default function Home() {
     return <div className={styles.container}>Loading...</div>;
   }
 
-  // Handle sign up with email
   const handleSignUpWithEmail = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -52,7 +51,6 @@ export default function Home() {
     }
   };
 
-  // Handle Google sign up
   const handleSignUpWithGoogle = async () => {
     const provider = new GoogleAuthProvider();
     try {
@@ -66,7 +64,6 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      {/* Optional overlay if you want to dim the background image */}
       <div className={styles.overlay}></div>
 
       <div className={styles.card}>

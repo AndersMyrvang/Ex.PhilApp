@@ -8,8 +8,6 @@ export default function HomePage() {
   return (
     <div className={styles.pageWrapper}>
 
-
-      {/* Hero Section */}
       <header className={styles.heroSection}>
         <div className={styles.heroOverlay}>
           <h1>Velkommen til Ex.Phil eksamensøving</h1>
@@ -17,7 +15,6 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Features Section */}
       <section className={styles.featuresSection}>
         <div className={styles.featureCard}>
           <h2>Lag en bruker</h2>

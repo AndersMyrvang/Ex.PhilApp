@@ -11,5 +11,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%; /* So flex:1 on <main> can work properly */
+  height: 100%;
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode a {
+  color: #90caf9;
+} 

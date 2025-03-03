@@ -5,7 +5,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db, auth } from "../../firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
 import styles from "./results.module.css";
-import { useRouter } from "next/navigation"; // For Next.js 13
+import { useRouter } from "next/navigation";
 
 interface Result {
   userId: string;
@@ -22,7 +22,6 @@ const ResultaterPage: React.FC = () => {
 
   const router = useRouter();
 
-  // Listen for auth changes
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -34,7 +33,6 @@ const ResultaterPage: React.FC = () => {
     return () => unsubscribe();
   }, []);
 
-  // Fetch results for this user
   useEffect(() => {
     const fetchResults = async () => {
       if (!userId) {

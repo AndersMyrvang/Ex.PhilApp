@@ -1,5 +1,3 @@
-/* components/examComponent.module.css */
-
 .backgroundExam {
   display: flex;
   flex-direction: column; 
@@ -10,7 +8,6 @@
   padding: 0;
 }
 
-/* Hoved-container for quiz-innholdet */
 .examContainer {
   padding: 20px;
   max-width: 800px;

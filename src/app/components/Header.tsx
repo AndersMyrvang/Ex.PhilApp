@@ -7,8 +7,12 @@ import styles from "./Header.module.css";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebase/config";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// A small helper function to map the pathname to a readable title
+library.add(fas);
+
 function getPageTitle(pathname: string): string {
   switch (pathname) {
     case "/":
@@ -28,15 +32,46 @@ function getPageTitle(pathname: string): string {
     case "/profile":
       return "Min Profil";
     default:
-      return "ExPhil App"; // fallback if you have other routes
+      return "ExPhil App";
   }
+}
+
+function DarkModeButton() {
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    return savedMode === 'true';
+  });
+
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    document.body.classList.toggle('dark-mode', newMode);
+    localStorage.setItem('darkMode', newMode.toString());
+  };
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
+
+  return (
+    <button className="dark-mode-button" onClick={toggleDarkMode} aria-label="Toggle Dark Mode">
+      <FontAwesomeIcon
+        icon={darkMode ? 'sun' : 'moon'}
+        style={{ fontSize: '24px', color: darkMode ? '#FFD700' : '#555' }}
+      />
+    </button>
+  );
 }
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
   const router = useRouter();
-  const pathname = usePathname(); // Hook to get current path
+  const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const pageTitle = getPageTitle(pathname);
@@ -75,14 +110,14 @@ export default function Header() {
 
   const routeLogin = async () => {
     try {
-      router.push("/login"); 
+      router.push("/login");
     } catch (error) {
       console.error("Feil ved innlogging:", error);
     }
   };
   const routeHome = async () => {
     try {
-      router.push("/"); 
+      router.push("/");
     } catch (error) {
       console.error("Feil ved innlogging:", error);
     }
@@ -94,7 +129,7 @@ export default function Header() {
       return;
     }
     try {
-      router.push("/results"); 
+      router.push("/results");
     } catch (error) {
       console.error("Feil ved innlogging:", error);
     }
@@ -104,15 +139,13 @@ export default function Header() {
     <header className={styles.header}>
       <nav className={styles.nav}>
 
-        {/* Left: Current page title */}
         <div className={styles.left}>
           <button onClick={routeHome} className={styles.navButton}>
-          <i className="bi bi-house"></i>
+            <i className="bi bi-house"></i>
           </button>
           <span className={styles.pageTitle}>{pageTitle}</span>
         </div>
 
-        {/* Middle: Eksamener dropdown + Resultater link */}
         <div className={styles.middle}>
           <div className={styles.dropdown} ref={dropdownRef}>
             <button onClick={toggleDropdown} className={styles.navButton}>
@@ -136,15 +169,15 @@ export default function Header() {
             )}
           </div>
 
+          <DarkModeButton />
+
           <button onClick={routeResults} className={styles.navButton}>
             Resultater
           </button>
         </div>
 
-        {/* Right: Profile photo (if logged in) or Logg inn */}
         <div className={styles.right}>
           {user ? (
-            // If user is logged in, show profile photo
             <Link href="/profile" className={styles.profilePhotoContainer}>
               {user.photoURL ? (
                 <img

@@ -10,7 +10,6 @@ export default function ProfilePage() {
     const [user, setUser] = useState<User | null>(null);
     const router = useRouter();
 
-    // Listen for Firebase auth state changes
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -18,14 +17,6 @@ export default function ProfilePage() {
         return () => unsubscribe();
     }, []);
 
-    // Handler for resetting the user's password
-    const handleResetPassword = () => {
-        // Implement your password reset logic here
-        // e.g. sending a password reset email
-        alert("Password reset link has been sent to your email (not implemented).");
-    };
-
-    // Handler for logging out
     const handleLogout = async () => {
         try {
             await signOut(auth);
@@ -35,7 +26,6 @@ export default function ProfilePage() {
         }
     };
 
-    // If there's no user, you might want to show a "Please log in" message or redirect
     if (!user) {
         return (
             <div className={styles.notLoggedIn}>
@@ -46,9 +36,7 @@ export default function ProfilePage() {
 
     return (
         <div className={styles.profileContainer}>
-            {/* Profile photo */}
             <div className={styles.profilePhotoContainer}>
-                {/* If user.photoURL is available, show it; otherwise, show a placeholder */}
                 {user.photoURL ? (
                     <img
                         src={user.photoURL}
@@ -61,19 +49,13 @@ export default function ProfilePage() {
                     </div>
                 )}
             </div>
-
-            {/* User name */}
             <h2 className={styles.profileName}>
                 {user.displayName ? user.displayName : "Name"}
             </h2>
-
-            {/* Email */}
             <div className={styles.emailContainer}>
                 <span>Mail:</span>
                 <span>{user.email ? user.email : "example@mail.com"}</span>
             </div>
-
-            {/* Actions */}
             <div className={styles.actions}>
                 <button onClick={handleLogout} className={styles.actionButton}>
                     Log out

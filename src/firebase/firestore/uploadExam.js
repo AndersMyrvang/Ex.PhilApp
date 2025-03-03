@@ -2,7 +2,7 @@ const admin = require('firebase-admin');
 const fs = require('fs');
 
 // Initialiser Firebase Admin med din service account nøkkel
-const serviceAccount = require('./serviceAccountKey.json');
+const serviceAccount = require('../../../serviceAccountKey.json');
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });

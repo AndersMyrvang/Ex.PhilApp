@@ -17,7 +17,7 @@ export interface ExamData {
 
 interface ExamComponentProps {
   examData: ExamData;
-  userId?: string; // Om du har brukere
+  userId?: string;
 }
 
 const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
@@ -31,7 +31,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     setSelectedAnswers(newAnswers);
   };
 
-  // Calculate how many answers are correct
   const calculateScore = () => {
     let correctCount = 0;
     examData.questions.forEach((q, idx) => {
@@ -42,7 +41,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     return correctCount;
   };
 
-  // Submit the exam and store the result
   const handleSubmit = async () => {
     const correctCount = calculateScore();
     setScore(correctCount);
@@ -90,8 +88,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
                   </li>
                 ))}
               </ul>
-
-              {/* Show feedback only AFTER submission */}
               {submitted && selected !== undefined && (
                 <p
                   className={
@@ -108,8 +104,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
             </div>
           );
         })}
-
-        {/* Submit button / Score display */}
         {!submitted ? (
           <button onClick={handleSubmit} className={styles.submitButton}>
             Fullfør eksamen
