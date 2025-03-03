@@ -169,11 +169,13 @@ export default function Header() {
             )}
           </div>
 
-          <DarkModeButton />
 
           <button onClick={routeResults} className={styles.navButton}>
             Resultater
           </button>
+        </div>
+            <div className={styles.right}>
+        <DarkModeButton />
         </div>
 
         <div className={styles.right}>
