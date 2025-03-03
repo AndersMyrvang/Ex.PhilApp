@@ -1,3 +1,4 @@
+// eksamen1/page.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -10,20 +11,31 @@ import {
   getDocs,
   DocumentData,
 } from "firebase/firestore";
-import { db } from "../../firebase/config";
+import { db, auth } from "../../firebase/config";
+import { onAuthStateChanged } from "firebase/auth";
 
 const Eksamen1Page: React.FC = () => {
   const [examData, setExamData] = useState<ExamData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
-  // The ID of the main exam document in the "exams" collection
+  const [userId, setUserId] = useState<string | null>(null);
   const examId = "exam_1";
+
+  // Listen for authentication state changes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserId(user.uid);
+      } else {
+        setUserId(null);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     const fetchExam = async () => {
       try {
-        // 1) Fetch the main exam document
         const examDocRef = doc(db, "exams", examId);
         const examDocSnap = await getDoc(examDocRef);
 
@@ -33,25 +45,20 @@ const Eksamen1Page: React.FC = () => {
           return;
         }
 
-        // This might contain fields like examId or examName
         const docData = examDocSnap.data() as DocumentData;
 
-        // 2) Fetch the "questions" subcollection
         const questionsRef = collection(db, "exams", examId, "questions");
         const questionsSnap = await getDocs(questionsRef);
 
-        // 3) Map each subcollection document into a Question object
         const questions = questionsSnap.docs.map((questionDoc) => {
           const qData = questionDoc.data();
           return {
             questionText: qData.questionText || "",
-            // Use the "options" array directly
             options: qData.options || [],
             correctChoice: qData.correctChoice ?? 0,
           };
         });
 
-        // 4) Build the ExamData object
         const combinedExamData: ExamData = {
           examId: docData.examId || examId,
           questions,
@@ -76,9 +83,13 @@ const Eksamen1Page: React.FC = () => {
     return <div className={styles.error}>{error}</div>;
   }
 
+  if (!userId) {
+    return <div className={styles.error}>Please log in to take the exam.</div>;
+  }
+
   return (
     <div className={styles.pageContainer}>
-      {examData && <ExamComponent examData={examData} />}
+      {examData && <ExamComponent examData={examData} userId={userId} />}
     </div>
   );
 };
