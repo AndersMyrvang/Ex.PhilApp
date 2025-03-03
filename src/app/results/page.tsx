@@ -61,11 +61,6 @@ const ResultaterPage: React.FC = () => {
     fetchResults();
   }, [userId]);
 
-  // Called when the user clicks a particular card
-  const handleResultClick = (examId: string) => {
-    router.push(`/results/${examId}`);
-  };
-
   if (loading) {
     return <p className={styles.loading}>Laster resultater...</p>;
   }
@@ -87,7 +82,6 @@ const ResultaterPage: React.FC = () => {
             <li
               key={index}
               className={styles.resultItem}
-              onClick={() => handleResultClick(res.examId)}
             >
               <p>
                 <strong>Eksamens-ID:</strong> {res.examId}

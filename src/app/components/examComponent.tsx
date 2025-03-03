@@ -1,8 +1,8 @@
 // examComponent.tsx
-import React, { useState } from 'react';
-import { doc, setDoc } from 'firebase/firestore';
-import { db } from '../../firebase/config'; // Pass på riktig path
-import styles from './examComponent.module.css';
+import React, { useState } from "react";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase/config";
+import styles from "./examComponent.module.css";
 
 export interface Question {
   questionText: string;
@@ -31,7 +31,7 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     setSelectedAnswers(newAnswers);
   };
 
-  // Funksjon for å beregne antall riktige svar
+  // Calculate how many answers are correct
   const calculateScore = () => {
     let correctCount = 0;
     examData.questions.forEach((q, idx) => {
@@ -42,17 +42,17 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     return correctCount;
   };
 
-  // Funksjon for å sende resultat til Firestore
+  // Submit the exam and store the result
   const handleSubmit = async () => {
     const correctCount = calculateScore();
     setScore(correctCount);
     setSubmitted(true);
 
-    // Lag en unik ID for dokumentet, f.eks. userId + examId, eller bruk en auto-id
-    const resultDocRef = doc(db, 'results', `${userId ?? 'anonymous'}_${examData.examId}`);
+    const docId = `${userId ?? "anonymous"}_${examData.examId}`;
+    const resultDocRef = doc(db, "results", docId);
 
     await setDoc(resultDocRef, {
-      userId: userId ?? 'anonymous',
+      userId: userId ?? "anonymous",
       examId: examData.examId,
       correctCount,
       totalQuestions: examData.questions.length,
@@ -61,7 +61,11 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
   };
 
   if (!examData.questions || examData.questions.length === 0) {
-    return <div className={styles.examContainer}>No questions available for this exam.</div>;
+    return (
+      <div className={styles.examContainer}>
+        No questions available for this exam.
+      </div>
+    );
   }
 
   return (
@@ -77,17 +81,27 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
                 {question.options.map((option, i) => (
                   <li
                     key={i}
-                    className={`${styles.option} ${selected === i ? styles.selected : ''}`}
+                    className={`${styles.option} ${
+                      selected === i ? styles.selected : ""
+                    }`}
                     onClick={() => handleOptionClick(index, i)}
                   >
                     {option}
                   </li>
                 ))}
               </ul>
-              {selected !== undefined && (
-                <p className={selected === question.correctChoice ? styles.correct : styles.incorrect}>
+
+              {/* Show feedback only AFTER submission */}
+              {submitted && selected !== undefined && (
+                <p
+                  className={
+                    selected === question.correctChoice
+                      ? styles.correct
+                      : styles.incorrect
+                  }
+                >
                   {selected === question.correctChoice
-                    ? 'Correct!'
+                    ? "Correct!"
                     : `Incorrect. Correct answer: ${question.options[question.correctChoice]}`}
                 </p>
               )}
@@ -95,13 +109,13 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
           );
         })}
 
-        {/* Fullfør-knapp */}
+        {/* Submit button / Score display */}
         {!submitted ? (
-          <button onClick={handleSubmit} style={{ marginTop: '20px' }}>
+          <button onClick={handleSubmit} style={{ marginTop: "20px" }}>
             Fullfør eksamen
           </button>
         ) : (
-          <div style={{ marginTop: '20px' }}>
+          <div style={{ marginTop: "20px" }}>
             <p>
               Du fikk {score} av {examData.questions.length} riktige.
             </p>
