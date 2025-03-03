@@ -58,10 +58,10 @@ function DarkModeButton() {
   }, [darkMode]);
 
   return (
-    <button className="dark-mode-button" onClick={toggleDarkMode} aria-label="Toggle Dark Mode">
+    <button className="dark-mode-button" onClick={toggleDarkMode} aria-label="Toggle Dark Mode" style={{ cursor: 'pointer' }}>
       <FontAwesomeIcon
-        icon={darkMode ? 'sun' : 'moon'}
-        style={{ fontSize: '24px', color: darkMode ? '#FFD700' : '#555' }}
+      icon={darkMode ? 'sun' : 'moon'}
+      style={{ fontSize: '24px', color: darkMode ? '#FFD700' : '#555' }}
       />
     </button>
   );
@@ -174,11 +174,9 @@ export default function Header() {
             Resultater
           </button>
         </div>
-            <div className={styles.right}>
-        <DarkModeButton />
-        </div>
 
         <div className={styles.right}>
+         <div style={{ margin: '1rem' }}> <DarkModeButton /> </div>
           {user ? (
             <Link href="/profile" className={styles.profilePhotoContainer}>
               {user.photoURL ? (

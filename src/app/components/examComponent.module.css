@@ -76,4 +76,66 @@
   .submitButton:hover {
     background-color: #0056b3;
   }
-  
+
+/* Container for the prev/next buttons */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+/* Style for the nav buttons (prev/next) */
+.navButton {
+  padding: 8px 12px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.navButton:hover:enabled {
+  background-color: #ddd;
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Container for the question number buttons */
+.questionNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+/* Each question number button */
+.questionNumberButton {
+  width: 40px;
+  height: 40px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.questionNumberButton:hover {
+  background-color: #ddd;
+}
+
+/* Highlight the active question number */
+.activeQuestion {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* Mark answered question number with a distinct color */
+.answeredQuestion {
+  background-color: #ffc107; /* for example, a light amber */
+  color: #000;
+  border-color: #ffc107;
+}
