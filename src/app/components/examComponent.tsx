@@ -111,7 +111,7 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
 
         {/* Submit button / Score display */}
         {!submitted ? (
-          <button onClick={handleSubmit} style={{ marginTop: "20px" }}>
+          <button onClick={handleSubmit} className={styles.submitButton}>
             Fullfør eksamen
           </button>
         ) : (

@@ -7,7 +7,9 @@
   --background-rgb: 255, 255, 255;
 }
 
-/* body {
-  color: rgb(var(--foreground-rgb));
-  background-color: #2d2d2d;
-} */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* So flex:1 on <main> can work properly */
+}

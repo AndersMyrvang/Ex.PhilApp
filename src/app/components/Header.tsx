@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import styles from "./Header.module.css";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebase/config";
 import "bootstrap-icons/font/bootstrap-icons.css";
-
 
 // A small helper function to map the pathname to a readable title
 function getPageTitle(pathname: string): string {
@@ -38,6 +37,7 @@ export default function Header() {
   const [user, setUser] = useState<any>(null);
   const router = useRouter();
   const pathname = usePathname(); // Hook to get current path
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const pageTitle = getPageTitle(pathname);
 
@@ -48,6 +48,23 @@ export default function Header() {
     }
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        closeDropdown();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -97,23 +114,23 @@ export default function Header() {
 
         {/* Middle: Eksamener dropdown + Resultater link */}
         <div className={styles.middle}>
-          <div className={styles.dropdown}>
+          <div className={styles.dropdown} ref={dropdownRef}>
             <button onClick={toggleDropdown} className={styles.navButton}>
               Eksamener
             </button>
             {isDropdownOpen && (
               <ul className={styles.dropdownMenu}>
                 <li>
-                  <Link href="/eksamen1">Eksamen 1</Link>
+                  <Link href="/eksamen1" onClick={closeDropdown}>Eksamen 1</Link>
                 </li>
                 <li>
-                  <Link href="/eksamen2">Eksamen 2</Link>
+                  <Link href="/eksamen2" onClick={closeDropdown}>Eksamen 2</Link>
                 </li>
                 <li>
-                  <Link href="/eksamen3">Eksamen 3</Link>
+                  <Link href="/eksamen3" onClick={closeDropdown}>Eksamen 3</Link>
                 </li>
                 <li>
-                  <Link href="/eksamen4">Eksamen 4</Link>
+                  <Link href="/eksamen4" onClick={closeDropdown}>Eksamen 4</Link>
                 </li>
               </ul>
             )}
