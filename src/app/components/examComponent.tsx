@@ -22,8 +22,6 @@ interface ExamComponentProps {
   userId?: string;
 }
 
-const pathname = usePathname();
-
 function getExamTitle(pathname: string): string {
   switch (pathname) {
     case "/eksamen1":
@@ -110,6 +108,7 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     );
   }
 
+    const pathname = usePathname();
   
 
   const currentQuestion = examData.questions[currentQuestionIndex];
