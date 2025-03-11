@@ -1,3 +1,6 @@
+/* ============================= */
+/* Default (Light Mode) Styles   */
+/* ============================= */
 .backgroundExam {
     display: flex;
     flex-direction: column;
@@ -22,18 +25,15 @@
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.8rem;
+    color: #000; /* ensure visible on light background */
 }
 
-.loading {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 50px;
-}
-
+.loading,
 .noResults {
     text-align: center;
     font-size: 1.2rem;
     margin-top: 50px;
+    color: #000; /* ensure visible on light background */
 }
 
 .resultsList {
@@ -42,15 +42,7 @@
     padding: 0;
 }
 
-.resultItem {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-}
-
-.resultItem p {
-    margin: 5px 0;
-}
-
+/* resultItem container */
 .resultItem {
     background-color: #fff;
     margin-bottom: 1rem;
@@ -61,7 +53,55 @@
     cursor: pointer;
 }
 
+/* Hover effect */
 .resultItem:hover {
     background-color: #f9f9f9;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================= */
+/* Dark Mode Overrides           */
+/* ============================= */
+/*
+  Using the palette:
+    - #f0f4f8 (lightest)
+    - #bcccdc
+    - #829ab1
+    - #486581
+    - #102a43 (darkest)
+*/
+:global(body.dark-mode) .backgroundExam {
+    /* Optionally swap to a darker background image, or just use a solid fallback */
+    background: url("../../../public/morkTenkLang.png") no-repeat center center;
+    background-size: cover;
+    /* Fallback if image fails to load */
+    background-color: #102a43; 
+    color: #f0f4f8;
+}
+
+:global(body.dark-mode) .resultsContainer {
+    background-color: #486581; 
+    color: #f0f4f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* deeper shadow in dark mode */
+}
+
+:global(body.dark-mode) .title {
+    color: #f0f4f8;
+}
+
+:global(body.dark-mode) .loading,
+:global(body.dark-mode) .noResults {
+    color: #f0f4f8;
+}
+
+:global(body.dark-mode) .resultItem {
+    background-color: #829ab1; 
+    border: 1px solid #bcccdc;
+    color: #f0f4f8;
+}
+
+:global(body.dark-mode) .resultItem:hover {
+    background-color: #bcccdc; 
+    color: #102a43;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }

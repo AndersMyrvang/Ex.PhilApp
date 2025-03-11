@@ -1,9 +1,8 @@
-import styles from './Header.module.css';
-import stylesa from "./Footer.module.css";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
     return (
-      <footer className={styles.header}>
+      <footer className={styles.footer}>
         <div className="container mx-auto text-center">
           <p> 2025 ExphilApp. No rights reserved.</p>
         </div>

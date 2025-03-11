@@ -1,8 +1,12 @@
+/* ============================= */
+/* Default (Light Mode) Styles   */
+/* ============================= */
+
 .backgroundExam {
   display: flex;
   flex-direction: column; 
   min-height: 100vh;      
-  background: url("../../../public/tenkLang.png") no-repeat center center;
+  background: url("/tenkLang.png") no-repeat center center;
   background-size: cover;
   margin: 0; 
   padding: 0;
@@ -17,74 +21,72 @@
   border-radius: 8px;
   flex: 1;
 }
-  
-  .question {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 10px;
-  }
-  
-  .questionText {
-    font-weight: bold;
-  }
-  
-  .optionsList {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .option {
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease ;
-  }
-  
-  .option:hover {
-    background-color: #f9f9f9;
-  }
-  
-  .selected {
-    background-color: white;
-  }
-  
-  .correct {
-    color: green;
-    font-weight: bold;
-  }
-  
-  .incorrect {
-    color: red;
-    font-weight: bold;
-  }
 
-  .submitButton {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+.question {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
 
-  .submitButton:hover {
-    background-color: #0056b3;
-  }
+.questionText {
+  font-weight: bold;
+}
 
-/* Container for the prev/next buttons */
+.optionsList {
+  list-style: none;
+  padding: 0;
+}
+
+.option {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #f9f9f9;
+}
+
+.selected {
+  background-color: white;
+}
+
+.correct {
+  color: green;
+  font-weight: bold;
+}
+
+.incorrect {
+  color: red;
+  font-weight: bold;
+}
+
+.submitButton {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
 .navContainer {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
 }
 
-/* Style for the nav buttons (prev/next) */
 .navButton {
   padding: 8px 12px;
   background-color: #eee;
@@ -103,7 +105,6 @@
   cursor: not-allowed;
 }
 
-/* Container for the question number buttons */
 .questionNumbers {
   display: flex;
   flex-wrap: wrap;
@@ -111,7 +112,6 @@
   margin-bottom: 20px;
 }
 
-/* Each question number button */
 .questionNumberButton {
   width: 40px;
   height: 40px;
@@ -126,16 +126,111 @@
   background-color: #ddd;
 }
 
-/* Highlight the active question number */
 .activeQuestion {
   background-color: #007bff;
   color: white;
   border-color: #007bff;
 }
 
-/* Mark answered question number with a distinct color */
 .answeredQuestion {
-  background-color: #ffc107; /* for example, a light amber */
+  background-color: #ffc107; 
   color: #000;
   border-color: #ffc107;
+}
+
+/* ============================= */
+/* Dark Mode Overrides           */
+/* ============================= */
+/* 
+  Using the palette:
+    - #f0f4f8 (lightest)
+    - #bcccdc
+    - #829ab1
+    - #486581
+    - #102a43 (darkest)
+*/
+
+:global(body.dark-mode) .backgroundExam {
+  /* Replace or overlay your dark background image */
+  background: url("/morkTenkLang.png") no-repeat center center;
+  background-size: cover;
+  /* Fallback solid background if the image fails to load: */
+  background-color: #102a43;
+}
+
+:global(body.dark-mode) .examContainer {
+  background-color: #486581; /* Dark container background */
+  color: #f0f4f8;           /* Light text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+}
+
+/* Make questions stand out a bit with a subtle border color */
+:global(body.dark-mode) .question {
+  border-bottom: 1px solid #829ab1;
+}
+
+/* Options: slightly lighter background, but still dark theme */
+:global(body.dark-mode) .option {
+  background-color: #829ab1;
+  border-color: #bcccdc;
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .option:hover {
+  background-color: #bcccdc;
+  color: #102a43;
+}
+
+/* Selected option: highlight it with a lighter background */
+:global(body.dark-mode) .selected {
+  background-color: #bcccdc;
+  color: #102a43;
+}
+
+/* Buttons: a darker base with lighter hover */
+:global(body.dark-mode) .submitButton {
+  background-color: #102a43;
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .submitButton:hover {
+  background-color: #829ab1;
+  color: #f0f4f8;
+}
+
+/* Navigation buttons in dark mode */
+:global(body.dark-mode) .navButton {
+  background-color: #102a43;
+  color: #f0f4f8;
+  border: 1px solid #829ab1;
+}
+
+:global(body.dark-mode) .navButton:hover:enabled {
+  background-color: #829ab1;
+  color: #f0f4f8;
+}
+
+/* Question number buttons in dark mode */
+:global(body.dark-mode) .questionNumberButton {
+  background-color: #102a43;
+  border: 1px solid #829ab1;
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .questionNumberButton:hover {
+  background-color: #829ab1;
+  color: #f0f4f8;
+}
+
+/* Active question and answered question states in dark mode */
+:global(body.dark-mode) .activeQuestion {
+  background-color: #f0f4f8; 
+  color: #102a43; 
+  border-color: #829ab1;
+}
+
+:global(body.dark-mode) .answeredQuestion {
+  background-color: #bcccdc;
+  color: #102a43;
+  border-color: #829ab1;
 }

@@ -1,3 +1,6 @@
+/* ============================= */
+/* Default (Light Mode) Styles   */
+/* ============================= */
 .profileContainer {
   width: 100%;
   max-width: 400px;
@@ -37,17 +40,6 @@
   font-size: 1.5rem;
 }
 
-.examList {
-  margin: 1rem 0;
-  background-color: #e3e3e3;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.examList p {
-  margin: 0.5rem 0;
-}
-
 .emailContainer {
   display: flex;
   align-items: center;
@@ -83,4 +75,49 @@
 .notLoggedIn {
   margin: 2rem auto;
   text-align: center;
+}
+
+/* ============================= */
+/* Dark Mode Overrides           */
+/* ============================= */
+/*
+  Using the palette:
+    - #f0f4f8 (lightest)
+    - #bcccdc
+    - #829ab1
+    - #486581
+    - #102a43 (darkest)
+*/
+:global(body.dark-mode) .profileContainer {
+  background-color: #486581; /* Use a mid-to-dark blue */
+  color: #f0f4f8; /* Light text for contrast */
+}
+
+:global(body.dark-mode) .profilePhotoPlaceholder {
+  background-color: #829ab1;
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .profileName {
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .emailContainer,
+:global(body.dark-mode) .emailContainer span {
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .actionButton {
+  background-color: #102a43;
+  color: #f0f4f8;
+  border: 1px solid #829ab1;
+}
+
+:global(body.dark-mode) .actionButton:hover {
+  background-color: #829ab1;
+  color: #102a43;
+}
+
+:global(body.dark-mode) .notLoggedIn {
+  color: #f0f4f8;
 }

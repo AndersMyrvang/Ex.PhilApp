@@ -14,11 +14,27 @@ body {
   height: 100%;
 }
 
+.dark-mode-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  /* optional padding or margin adjustments */
+}
+
 body.dark-mode {
-  background-color: #121212;
+  background-color: #102a43 ;
   color: #e0e0e0;
 }
 
-body.dark-mode a {
-  color: #90caf9;
-} 
+:global(.pageWrapper) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Force at least full viewport height */
+}
+
+/* Main content grows to fill remaining space */
+:global(.mainContent) {
+  flex: 1;
+  /* If you want some spacing or background, do it here */
+}
+
