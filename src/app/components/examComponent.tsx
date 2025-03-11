@@ -1,10 +1,7 @@
-// examComponent.tsx
 import React, { useState } from "react";
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "../../firebase/config";
 import styles from "./examComponent.module.css";
 import { usePathname } from "next/navigation";
-
+import { submitExamResult } from "../../utils/examResults";
 
 export interface Question {
   questionText: string;
@@ -38,9 +35,7 @@ function getExamTitle(pathname: string): string {
 }
 
 const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
-  // Keep track of the current question being displayed
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-
   const [selectedAnswers, setSelectedAnswers] = useState<number[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(null);
@@ -63,22 +58,18 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     return correctCount;
   };
 
-  // Submit the exam and store the result
+  // Submit the exam and store the result using the utility function
   const handleSubmit = async () => {
     const correctCount = calculateScore();
     setScore(correctCount);
     setSubmitted(true);
 
-    const docId = `${userId ?? "anonymous"}_${examData.examId}`;
-    const resultDocRef = doc(db, "results", docId);
-
-    await setDoc(resultDocRef, {
-      userId: userId ?? "anonymous",
-      examId: examData.examId,
+    await submitExamResult(
+      userId ?? "anonymous",
+      examData.examId,
       correctCount,
-      totalQuestions: examData.questions.length,
-      timestamp: new Date().toISOString(),
-    });
+      examData.questions.length
+    );
   };
 
   // Navigation: go to previous question (if possible)
@@ -108,13 +99,10 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     );
   }
 
-    const pathname = usePathname();
-  
-
+  const pathname = usePathname();
   const currentQuestion = examData.questions[currentQuestionIndex];
   const selected = selectedAnswers[currentQuestionIndex];
   const pageTitle = getExamTitle(pathname);
-
 
   return (
     <div className={styles.backgroundExam}>
@@ -130,8 +118,7 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
             {currentQuestion.options.map((option, i) => (
               <li
                 key={i}
-                className={`${styles.option} ${selected === i ? styles.selected : ""
-                  }`}
+                className={`${styles.option} ${selected === i ? styles.selected : ""}`}
                 onClick={() => handleOptionClick(currentQuestionIndex, i)}
               >
                 {option}
@@ -149,8 +136,7 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
             >
               {selected === currentQuestion.correctChoice
                 ? "Correct!"
-                : `Incorrect. Correct answer: ${currentQuestion.options[currentQuestion.correctChoice]
-                }`}
+                : `Incorrect. Correct answer: ${currentQuestion.options[currentQuestion.correctChoice]}`}
             </p>
           )}
         </div>
@@ -183,10 +169,10 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
                 key={index}
                 onClick={() => handleQuestionNumberClick(index)}
                 className={`
-        ${styles.questionNumberButton}
-        ${isAnswered ? styles.answeredQuestion : ""}
-        ${currentQuestionIndex === index ? styles.activeQuestion : ""}
-      `}
+                  ${styles.questionNumberButton}
+                  ${isAnswered ? styles.answeredQuestion : ""}
+                  ${currentQuestionIndex === index ? styles.activeQuestion : ""}
+                `}
               >
                 {index + 1}
               </button>
