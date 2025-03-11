@@ -1,18 +1,11 @@
-// eksamen1/page.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
 import ExamComponent, { ExamData } from "../components/examComponent";
 import styles from "./eksamen1.module.css";
-import {
-  doc,
-  getDoc,
-  collection,
-  getDocs,
-  DocumentData,
-} from "firebase/firestore";
 import { db, auth } from "../../firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
+import { fetchExamData } from "../../utils/fetchExamData";
 
 const Eksamen1Page: React.FC = () => {
   const [examData, setExamData] = useState<ExamData | null>(null);
@@ -33,37 +26,10 @@ const Eksamen1Page: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const fetchExam = async () => {
+    const loadExam = async () => {
       try {
-        const examDocRef = doc(db, "exams", examId);
-        const examDocSnap = await getDoc(examDocRef);
-
-        if (!examDocSnap.exists()) {
-          setError("Exam not found");
-          setLoading(false);
-          return;
-        }
-
-        const docData = examDocSnap.data() as DocumentData;
-
-        const questionsRef = collection(db, "exams", examId, "questions");
-        const questionsSnap = await getDocs(questionsRef);
-
-        const questions = questionsSnap.docs.map((questionDoc) => {
-          const qData = questionDoc.data();
-          return {
-            questionText: qData.questionText || "",
-            options: qData.options || [],
-            correctChoice: qData.correctChoice ?? 0,
-          };
-        });
-
-        const combinedExamData: ExamData = {
-          examId: docData.examId || examId,
-          questions,
-        };
-
-        setExamData(combinedExamData);
+        const fetchedExam = await fetchExamData(examId);
+        setExamData(fetchedExam);
       } catch (err: any) {
         setError("Error fetching exam: " + err.message);
       } finally {
@@ -71,7 +37,7 @@ const Eksamen1Page: React.FC = () => {
       }
     };
 
-    fetchExam();
+    loadExam();
   }, []);
 
   if (loading) {
