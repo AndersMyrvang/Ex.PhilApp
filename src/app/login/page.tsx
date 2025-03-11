@@ -2,14 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { auth } from "@/firebase/config";
-import {
-  createUserWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-  updateProfile,
-} from "firebase/auth";
 import styles from "./login.module.css";
+import { auth } from "@/firebase/config";
+import { subscribeToAuthState, signUpWithEmail, signInWithGoogle } from "@/utils/firebaseAuth";
 
 export default function Home() {
   const router = useRouter();
@@ -19,7 +14,7 @@ export default function Home() {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = subscribeToAuthState((user) => {
       if (user) {
         router.push("/");
       }
@@ -42,8 +37,7 @@ export default function Home() {
     }
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      await updateProfile(userCredential.user, { displayName });
+      await signUpWithEmail(email, password, displayName);
       alert("Bruker opprettet!");
       router.push("/");
     } catch (error: any) {
@@ -52,9 +46,8 @@ export default function Home() {
   };
 
   const handleSignUpWithGoogle = async () => {
-    const provider = new GoogleAuthProvider();
     try {
-      await signInWithPopup(auth, provider);
+      await signInWithGoogle();
       alert("Logget inn med Google!");
       router.push("/");
     } catch (error: any) {
