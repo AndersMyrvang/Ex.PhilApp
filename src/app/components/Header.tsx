@@ -4,64 +4,47 @@ import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import styles from "./Header.module.css";
-import { onAuthStateChanged } from "firebase/auth";
+import { subscribeToAuthState } from "@/utils/firebaseAuth";
 import { auth } from "@/firebase/config";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { getPageTitle } from "@/utils/getPageTitle";
 
 library.add(fas);
 
-function getPageTitle(pathname: string): string {
-  switch (pathname) {
-    case "/":
-      return "Home";
-    case "/login":
-      return "login";
-    case "/results":
-      return "Resultater";
-    case "/eksamen1":
-      return "Eksamen 1";
-    case "/eksamen2":
-      return "Eksamen 2";
-    case "/eksamen3":
-      return "Eksamen 3";
-    case "/eksamen4":
-      return "Eksamen 4";
-    case "/profile":
-      return "Min Profil";
-    default:
-      return "ExPhil App";
-  }
-}
-
 function DarkModeButton() {
   const [darkMode, setDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem('darkMode');
-    return savedMode === 'true';
+    const savedMode = localStorage.getItem("darkMode");
+    return savedMode === "true";
   });
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-    document.body.classList.toggle('dark-mode', newMode);
-    localStorage.setItem('darkMode', newMode.toString());
+    document.body.classList.toggle("dark-mode", newMode);
+    localStorage.setItem("darkMode", newMode.toString());
   };
 
   useEffect(() => {
     if (darkMode) {
-      document.body.classList.add('dark-mode');
+      document.body.classList.add("dark-mode");
     } else {
-      document.body.classList.remove('dark-mode');
+      document.body.classList.remove("dark-mode");
     }
   }, [darkMode]);
 
   return (
-    <button className="dark-mode-button" onClick={toggleDarkMode} aria-label="Toggle Dark Mode" style={{ cursor: 'pointer' }}>
+    <button
+      className="dark-mode-button"
+      onClick={toggleDarkMode}
+      aria-label="Toggle Dark Mode"
+      style={{ cursor: "pointer" }}
+    >
       <FontAwesomeIcon
-      icon={darkMode ? 'sun' : 'moon'}
-      style={{ fontSize: '24px', color: darkMode ? '#FFD700' : '#555' }}
+        icon={darkMode ? "sun" : "moon"}
+        style={{ fontSize: "24px", color: darkMode ? "#FFD700" : "#555" }}
       />
     </button>
   );
@@ -90,7 +73,10 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         closeDropdown();
       }
     };
@@ -102,7 +88,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = subscribeToAuthState((currentUser) => {
       setUser(currentUser);
     });
     return () => unsubscribe();
@@ -115,6 +101,7 @@ export default function Header() {
       console.error("Feil ved innlogging:", error);
     }
   };
+
   const routeHome = async () => {
     try {
       router.push("/");
@@ -133,12 +120,11 @@ export default function Header() {
     } catch (error) {
       console.error("Feil ved innlogging:", error);
     }
-  }
+  };
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-
         <div className={styles.left}>
           <button onClick={routeHome} className={styles.navButton}>
             <i className="bi bi-house"></i>
@@ -154,21 +140,28 @@ export default function Header() {
             {isDropdownOpen && (
               <ul className={styles.dropdownMenu}>
                 <li>
-                  <Link href="/eksamen1" onClick={closeDropdown}>Eksamen 1</Link>
+                  <Link href="/eksamen1" onClick={closeDropdown}>
+                    Eksamen 1
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/eksamen2" onClick={closeDropdown}>Eksamen 2</Link>
+                  <Link href="/eksamen2" onClick={closeDropdown}>
+                    Eksamen 2
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/eksamen3" onClick={closeDropdown}>Eksamen 3</Link>
+                  <Link href="/eksamen3" onClick={closeDropdown}>
+                    Eksamen 3
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/eksamen4" onClick={closeDropdown}>Eksamen 4</Link>
+                  <Link href="/eksamen4" onClick={closeDropdown}>
+                    Eksamen 4
+                  </Link>
                 </li>
               </ul>
             )}
           </div>
-
 
           <button onClick={routeResults} className={styles.navButton}>
             Resultater
@@ -176,7 +169,9 @@ export default function Header() {
         </div>
 
         <div className={styles.right}>
-         <div style={{ margin: '1rem' }}> <DarkModeButton /> </div>
+          <div style={{ margin: "1rem" }}>
+            <DarkModeButton />
+          </div>
           {user ? (
             <Link href="/profile" className={styles.profilePhotoContainer}>
               {user.photoURL ? (
