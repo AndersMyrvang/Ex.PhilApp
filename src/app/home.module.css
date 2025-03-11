@@ -61,7 +61,7 @@
 
 /* Lighter cards with a subtle hover */
 .featureCard {
-  background-color: #ffffff; 
+  background-color: #ffffff;
   flex: 1 1 250px;
   max-width: 350px;
   padding: 1.5rem;
@@ -72,7 +72,7 @@
 }
 
 .featureCard:hover {
-  background-color: #eaecef; 
+  background-color: #eaecef;
 }
 
 .featureCard h2 {
@@ -85,7 +85,7 @@
 }
 
 .footer {
-  background-color: #f6f8fa; 
+  background-color: #f6f8fa;
   text-align: center;
   padding: 1rem;
   border-top: 1px solid #d0d7de;
@@ -96,7 +96,6 @@
   margin: 0;
   font-size: 0.9rem;
 }
-
 
 /* =========================== */
 /* DARK MODE OVERRIDES        */
@@ -110,7 +109,7 @@
 */
 :global(body.dark-mode) .pageWrapper {
   background-color: #102a43; /* darkest */
-  color: #f0f4f8;            /* light text */
+  color: #f0f4f8; /* light text */
 }
 
 :global(body.dark-mode) .heroSection {
@@ -126,10 +125,6 @@
 :global(body.dark-mode) .heroOverlay h1,
 :global(body.dark-mode) .heroOverlay p {
   color: #f0f4f8;
-}
-
-:global(body.dark-mode) .featuresSection {
-  /* No direct background override needed unless you want a separate container color */
 }
 
 :global(body.dark-mode) .featureCard {

@@ -1,19 +1,11 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { db, auth } from "../../firebase/config";
+import { auth } from "../../firebase/config";
 import { onAuthStateChanged } from "firebase/auth";
-import styles from "./results.module.css";
 import { useRouter } from "next/navigation";
-
-interface Result {
-  userId: string;
-  examId: string;
-  correctCount: number;
-  totalQuestions: number;
-  timestamp: string;
-}
+import styles from "./results.module.css";
+import { getUserResults, Result } from "../../utils/firebaseResults";
 
 const ResultaterPage: React.FC = () => {
   const [results, setResults] = useState<Result[]>([]);
@@ -40,14 +32,7 @@ const ResultaterPage: React.FC = () => {
         return;
       }
       try {
-        const q = query(
-          collection(db, "results"),
-          where("userId", "==", userId)
-        );
-        const snapshot = await getDocs(q);
-        const fetchedResults: Result[] = snapshot.docs.map((docSnap) =>
-          docSnap.data() as Result
-        );
+        const fetchedResults = await getUserResults(userId);
         setResults(fetchedResults);
       } catch (error) {
         console.error("Error fetching results:", error);
@@ -77,10 +62,7 @@ const ResultaterPage: React.FC = () => {
         <h1 className={styles.title}>Dine resultater</h1>
         <ul className={styles.resultsList}>
           {results.map((res, index) => (
-            <li
-              key={index}
-              className={styles.resultItem}
-            >
+            <li key={index} className={styles.resultItem}>
               <p>
                 <strong>Eksamens-ID:</strong> {res.examId}
               </p>
