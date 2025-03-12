@@ -10,7 +10,7 @@ admin.initializeApp({
 const db = admin.firestore();
 
 // Les inn exam1.json som inneholder spørsmålene dine
-const examData = JSON.parse(fs.readFileSync('exam1.json', 'utf-8'));
+const examData = JSON.parse(fs.readFileSync('exam5.json', 'utf-8'));
 
 async function uploadExam() {
   // Bruk examData.examId som dokument-ID i "exams"-samlingen

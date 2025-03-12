@@ -1,0 +1,407 @@
+{
+    "examId": "exam_5",
+    "questions": [
+      {
+        "questionText": "Hva er paternalisme?",
+        "options": [
+          "Å begrense noens handlefrihet med henvisning til at det er til deres eget beste.",
+          "Å begrense noens handlefrihet med henvisning til guddommelig autoritet, eks. de ti bud ol.",
+          "En ideologi som sier at far bør bestemme i hjemmet.",
+          "En form for prestestyre som brukes i den katolske kirken."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilken påstand beskriver best innholdet i J. S. Mills såkalte skadeprinsipp?",
+        "options": [
+          "Det er rettferdig å straffe en person med skade tilsvarende den skaden vedkommende har forvoldt på andre.",
+          "Hvis man påfører noen skade, er det den forulempede parts ansvar å bevise skadens art og omfang.",
+          "Det er tillatt å bruke tvang mot myndige voksne kun for å hindre skade på andre.",
+          "All straff bør ta sikte på å skade den som har begått en forbrytelse."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hvilken påstand beskriver best J. S. Mills utilitaristiske syn på frihet og retten til å bestemme over eget liv?",
+        "options": [
+          "Frihet og selvbestemmelse bidrar til lykke for den enkelte og for samfunnet som helhet.",
+          "Frihet og selvbestemmelse er goder som bør gis kun til de som har bevist at de er progressive vesen.",
+          "Vi har en medfødt rett til frihet.",
+          "Hensynet til den samlete samfunnsnytten gjør at vi må legge strenge begrensninger på den enkeltes frihet til å utforske alternative levemåter."
+
+        ],
+        "correctChoice": 3
+      },
+      {
+        "questionText": "Ifølge M. Wollstonecraft og I. Kant, hva innebærer frihet i en politisk sammenheng?",
+        "options": [
+          "Fravær av asymmetriske avhengighetsrelasjoner som gjør at noen må rette seg etter andre enkeltpersoners vilkårlige vilje.",
+          "At vi ikke er bundet av lover og regler som offentlige myndigheter har vedtatt skal gjelde på statens territorium.",
+          "At alle kan gjøre som de vil, uten å ta hensyn til andre personers rettigheter.",
+          "Så lenge ingen blander seg og aktivt hindrer en i å utføre ens vilje."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "C. Taylor tar til orde for noe han kaller forskjellspolitikk. Hva går forskjellspolitikk ut på?",
+        "options": [
+          "At flerkulturelle samfunn bør ha en politikk for anerkjennelse og bevaring av minoritetsgruppers kultur.",
+          "At enhver stat bør utvikle en særegen politisk identitet som skiller den fra andre stater.",
+          "At et samfunn bør ha et stort utvalg av forskjellige politiske parti for å representere forskjellige politiske interesser og preferanser.",
+          "At liberale stater bør tillate store økonomiske forskjeller."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hva må vi ifølge Martha Nussbaum legge vekt på når vi vurderer hvorvidt en stat er god?",
+        "options": [
+          "Dyder – som er de forutsetningene vi har for å leve moralsk godt.",
+          "Kapabiliteter – som er de faktiske muligheter et menneske har til å utøve sine evner og funksjoner.",
+          "Utilitaristisk nyttekalkyle – som muliggjør å predikere og legge til rette for innbyggernes gjennomsnittlige tilfredshet.",
+          "Livskvalitet – som er tallfestede, presise og objektive mål på levekår og velstand som man kan sammenligne på tvers av stater."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hvilket argument er mest i samsvar med Mills syn, når du skal argumentere mot lovgivning som gjør det straffbart å snakke nedverdigende om personer på grunnlag av deres seksuelle legning?",
+        "options": [
+          "Det burde være lov å fremføre hvilken som helst ytring, homofob eller ei, for ytringsfrihet er en betingelse for demokratisk styring og vår utvikling som selvstendige individer.",
+          "Det burde være lov å fremføre hvilken som helst ytring, homofob eller ei, for ytringsfrihet er en viktig del av vår medfødte rett til frihet.",
+          "Det burde være lov å fremføre homofobe ytringer så lenge de ikke medfører en klar og direkte fare for andre, for ytringsfrihet fremmer både kollektiv sannhetssøken og vår utvikling som selvstendige individer.",
+          "Det burde være lov å fremføre homofobe ytringer så lenge de ikke medfører en klar og direkte fare for andre, for ytringsfrihet motvirker misnøye og ytterligere radikalisering av folk med ekstreme synspunkter."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hva ligger i skillet mellom positiv og negativ frihet?",
+        "options": [
+          "Negativ frihet handler om frihet til å handle slik at vi maksimerer vår lykke eller glede. Positiv frihet handler om frihet til å realisere mer avanserte mål eller kapabiliteter.",
+          "Negativ frihet handler om frihetsutøvelse som også har negative konsekvenser for andre. Positiv frihet handler om utøvelse av frihet på måter som ikke skader andre.",
+          "Negativ frihet handler om frihetsutøvelse i tråd med våre egeninteresser. Positiv frihet handler om vår frihet til å handle på måter som ikke er til vårt eget beste.",
+          "Negativ frihet handler om fravær av ytre hindringer påført oss av andre. Positiv frihet handler om vår faktiske evne til å utøve selvbestemmelse."
+
+        ],
+        "correctChoice": 3
+      },
+      {
+        "questionText": "Hva karakteriserer det Charles Taylor kaller «forskjellspolitikk»?",
+        "options": [
+          "Politikk som fokuserer på å ivareta forskjellige gruppers forskjellige verdisystemer uten å anta at det finnes noen felles standard på tvers av gruppene.",
+          "Politikk som fokuserer på å ivareta individers rett til å velge å leve som de vil, uansett om valgene bryter med tradisjonene i gruppen de tilhører.",
+          "Politikk som fokuserer på å bevare det særegne ved ulike gruppers identiteter, også utover at individene i gruppene har samme rettigheter som andre.",
+          "Politikk basert på prinsippet om at ulik fordeling kan aksepteres i den grad de er til beste for de minst privilegerte i samfunnet."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hvilket statlig tiltak kan sikre ytringsfrihet som en positiv frihet?",
+        "options": [
+          "Å stramme inn begrensningene på ytringsfriheten slik at flere ytringer som oppfattes som krenkende eller blasfemisk forbies.",
+          "Å fjerne alle begrensninger av ytringsfriheten som har med blasfemi eller ærekrenkelse å gjøre fra loven.",
+          "Å sikre gjennom utdanning at alle borgere så langt som mulig har den kompetansen som skal til for å forstå og kunne delta i det offentlige ordskiftet.",
+          "Å kreve at alle borgere hvert år svarer på en spørreundersøkelse om politiske spørsmål slik at vi kan få en oversikt over hva gjennomsnittet av befolkningen faktisk mener."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hvorfor argumenterer Wollstonecraft og Kant for at ethvert enkeltindivids frihet må være forenlig med den samme friheten til ethvert annet individ?",
+        "options": [
+          "Fordi frihet anses som en iboende rettighet, og at frihet som fravær av dominans bare er mulig når utøvelsen vår av frihet ikke hindrer andres frihet.",
+          "Fordi frihet sørger for et velfungerende samfunn, og dette sikres mest effektivt hvis alle har den samme grad av frihet.",
+          "Fordi frihet sørger for at den enkelte får mulighet til å utforske alternative levemåter som passer for dem.",
+          "Fordi frihet er nødvendig for å leve gode liv i overensstemmelse med våre grunnleggende egenskaper."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilket statusbasert forsvar for ytringsfrihet kan man finne hos noen rettighetsteorier?",
+        "options": [
+          "Retten til å ytre seg fritt, også om kontroversielle temaer, samt å utsettes for andres ytringer, bidrar til vår intellektuelle utvikling. Menneskelig lykke avhenger nettopp av intellektuell utvikling.",
+          "Retten til å ytre seg fritt, også om kontroversielle temaer, er begrunnet i vår natur som politiske vesener. Fri meningsutveksling er en forutsetning for at vi skal kunne utvikle en dydig karakter og fungere godt som menneske.",
+          "Retten til å ytre seg fritt, også om kontroversielle temaer, samt å utsettes for andres ytringer, bidrar til å fremme sanne oppfatninger. Sensur av ytringer vil gjøre oss mindre motstandsdyktige mot feilaktige opplysninger.",
+          "Retten til å ytre seg fritt, også om kontroversielle temaer, er begrunnet i vår status som tenkende individer. Sensur av ytringer krenker vår rett til å ta selvstendig stilling til en sak."
+        ],
+        "correctChoice": 3
+      },
+      {
+        "questionText": "Hvilket av følgende beskrives best som et uttrykk for politisk atomisme?",
+        "options": [
+          "Mennesker lever i samfunn først og fremst fordi livet utenfor et fellesskap er langt vanskeligere enn et liv innenfor. De pliktene staten har overfor sine borgere er derfor å sikre materiell velstand, politisk og religiøs frihet, samt selvutvikling gjennom statlig subsidiering av kulturbærende institusjoner.",
+          "Mennesker lever i samfunn først og fremst fordi livet utenfor et fellesskap er langt vanskeligere enn et liv innenfor. De pliktene staten har overfor sine borgere er derfor å sikre at flest mulig kan leve ut sin individualitet, samtidig som de opplever tilhørighet til andre som deler deres verdier og livssyn.",
+          "Mennesker lever i samfunn først og fremst for å tilfredsstille egne behov og interesser på en effektiv måte. De pliktene vi har overfor staten og det politiske fellesskapet er sånn sett underordnet de pliktene vi har overfor oss selv og andre individer.",
+          "Mennesker lever i samfunn først og fremst fordi det politiske fellesskapet er en nødvendig betingelse for å leve et godt liv. De pliktene vi har overfor staten og det politiske fellesskapet skal derfor bidra til at vi kan utvikle våre fornuftsevner og ta selvstendige livsvalg."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Det blir ofte bemerket at det er en asymmetri mellom bekreftelse og avkreftelse av hypoteser. Hva er forskjellen?",
+        "options": [
+          "For å avkrefte en hypotese gjennom observasjoner, kreves bare deduktive slutninger. Bekreftelse krever induksjon.",
+          "Når en hypotese bekreftes av observasjoner, kan vi med sikkerhet si at den er sann. Avkreftelse gir ikke sikkerhet.",
+          "Kun hypoteser som avkreftes gjennom testing er helt sikkert vitenskapelig. Hypoteser som bekreftes er det ikke.",
+          "Kun bekreftelse av hypoteser kan bidra til vitenskapelig fremskritt. Avkreftelse fører derimot til paradigmeskifter."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Ved å sette et dataprogram til å se om det er noe interessant å finne i en enorm mengde helsedata fra hele Norge, har forskere oppdaget at en bestemt bygd har uvanlig mange tilfeller av en bestemt type kreft. De lurer på hvorfor, og finner etter hvert ut at det også er uvanlig store forekomster av kobber i jordsmonnet. Det har ikke tidligere vært forsket på om kobberforekomster har sammenheng med denne krefttypen. Forskerne konkluderer med at observasjonene støtter denne hypotesen: Kobberforekomster fører til høyere forekomster av denne krefttypen.\n\nMåten disse forskerne går frem på for å etablere konklusjonen, er ikke i tråd med hypotetisk-deduktiv metode, forstått som et skjema for hvordan man bør gå frem for å skaffe evidens for eller mot hypoteser. På hvilken måte avviker fremgangsmåten fra hvordan hypotetisk-deduktiv metode legger opp til at man går frem?",
+        "options": [
+          "Forholdet som forskerne beskriver i hypotesen, er ikke observerbart. Hypotetisk-deduktiv metode baserer seg på observasjoner for å bekrefte eller avkrefte hypoteser.",
+          "Selv om forskerne har funnet noe evidens for hypotesen, er den på ingen måte etablert med sikkerhet. Det er derfor klart at konklusjonen er basert på induktiv, og ikke bare deduktiv, resonnering.",
+          "Forskerne har ikke samlet tilstrekkelig med data. Det trengs langt mer evidens før man kan endelig avgjøre om hypotesen er korrekt.",
+          "Forskerne har ikke etablert en hypotese og avgjort hva slags observasjoner som ville bekrefte, eller avkrefte hypotesen på forhånd, før de samlet data."
+        ],
+        "correctChoice": 3
+      },
+      {
+        "questionText": "Hvilke av følgende påstander uttrykker best det som kalles Quine-Duhem-tesen?",
+        "options": [
+          "Vitenskapelig aktivitet forutsetter solid og presis forståelse av det man undersøker for å gi pålitelige resultater. Hvis man har mangelfull eller feilaktig forståelse av det empiriske fenomenet så kan dette lede til feilaktige eller mangelfulle resultater.",
+          "Vitenskapelige metoder forutsetter at man følger eksperimentelle opplegg presist i tråd med den anvendte metoden. Dersom man avviker fra det eksperimentelle opplegget, vil sannsynligvis resultatene basert på metoden være feilaktige eller mangelfulle.",
+          "Vitenskapelig aktivitet forutsetter solid og presis forståelse av teori for å gi pålitelige resultater. Hvis man har mangelfull eller feilaktig forståelse av teori så kan dette lede til feilaktige eller mangelfulle resultater.",
+          "Vitenskap anvender observasjon eller eksperimenter for å undersøke om teorier/hypoteser er holdbare eller ikke. Resultatene av slike undersøkelser er imidlertid ofte tett sammenvevd med teoretiske antagelser som ikke testes i eksperimentet."
+        ],
+        "correctChoice": 3
+      },
+      {
+        "questionText": "Overraskelsesprinsippet sier noe om vitenskapelig bekreftelse. Hva skal til for at observasjon bekrefter en hypotese?",
+        "options": [
+          "Observasjonen bekrefter en hypotese i den grad observasjonen den leder til overraskende konklusjoner.",
+          "Observasjonen bekrefter en hypotese i den grad den er overraskende dersom hypotesen er sann, og forventet dersom hypotesen er usann.",
+          "Observasjonen bekrefter en hypotese i den grad den er forventet dersom hypotesen er sann, og overraskende dersom hypotesen er usann.",
+          "Observasjonen bekrefter en hypotese i den grad hypotesen er dristig og overraskende."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Begrepet om situert kunnskap er sentralt innen standpunktepistemologi. Hva innebærer dette begrepet?",
+        "options": [
+          "At alle grupper vurderer forskningsresultater likt.",
+          "At vitenskapen må beholdes som verdifri.",
+          "At egenskaper ved forskeren påvirker evalueringen av data og funn.",
+          "At forskerens standpunkt og kunnskapen som oppnås, ikke må påvirkes av situasjoner utenfor forskningen."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hvilket av følgende forslag passer best som en definisjon av uttrykket «normalvitenskap», slik Thomas Kuhn bruker det?",
+        "options": [
+          "Vitenskap som ikke reiser spesielle etiske dilemmaer.",
+          "Vitenskapelig arbeid som gjøres innenfor eller på bakgrunn av et paradigme.",
+          "Vitenskapelige studier av normale ting, dvs. det som kan observeres direkte.",
+          "Undersøkelser som søker å avkrefte eller falsifisere, snarere enn å bekrefte eller verifisere, hypoteser."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hva går ideen om enhetsvitenskap ut på?",
+        "options": [
+          "At forskjellige vitenskapers forklaringer og teorier kan knyttes til hverandre, slik at resultater i en vitenskap i prinsippet kan oversettes til beskrivelser i en mer grunnleggende vitenskap.",
+          "At forskjellige vitenskapers forklaringer og teorier oppstår i så grunnleggende forskjellige kontekster at resultater i én disiplin prinsipielt ikke kan oversettes til en annen.",
+          "At spesialisering av vitenskapelige disipliner er det som skaper mest effektive fremskritt, slik at vitenskapelige disipliner bør operere uavhengig av hverandre, uten å tillate oversettelse eller integrasjon av teorier.",
+          "At vitenskapelige resultater først og fremst er et resultat av et komplekst samspill mellom økonomiske, politiske, sosiale og psykologiske faktorer."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilken av følgende beskrivelser passer best på Poppers syn på vitenskapelig fremskritt?",
+        "options": [
+          "Vitenskapelig fremskritt skjer gjennom å finne stadig mer belegg for de beste hypoteser og avkreftelse av de dårligere hypotesene.",
+          "Vitenskapelig fremskritt skjer ved at dårligere paradigmer eller verdensbilder blir erstattet med bedre gjennom vitenskapelige revolusjoner.",
+          "Vitenskapelig fremskritt skjer ved at de mest dristige og vidtrekkende hypotesene i tilstrekkelig grad bekreftes av evidens.",
+          "Vitenskapelig fremskritt skjer gjennom en eliminasjonsprosess der usanne hypoteser elimineres."
+        ],
+        "correctChoice": 3
+      },
+      {
+        "questionText": "Hvilket av følgende scenariene gir det mest treffende eksemplet på bekreftelsestendens (confirmation bias)?",
+        "options": [
+          "Edgar, en historiker, presenterer forskningsfunnene sine på en konferanse. Når han utfordes til å gi evidens for sine konklusjoner, svarer han at hvis ingen av konferansedeltakerne kan gi noen bedre forklaring av funnene, må de akseptere hans forklaring.",
+          "Emily, en psykolog, utfører en studie for å undersøke et fenomen. Hun rapporterer selektivt bare data som bekrefter hypotesen hennes og ignorerer eventuelle data som motsier den.",
+          "Sarah, en biolog, utfører eksperimenter uten en klar hypotese. Etter å ha fått noen resultater, velger hun en passende hypotese.",
+          "Markus, en nevrofysiker, utfører eksperimenter for å teste hypotesen sin. Han vurderer konsekvent resultatene objektivt og vurderer alternative forklaringer for uventede funn."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "I vitenskapsfilosofiske diskusjoner kan man støte på uttrykket ad hoc-hypotese. Hva menes med ad hoc-hypotese?",
+        "options": [
+          "En hypotese som introduseres for å “redde” en annen hypotese fra falsifikasjon.",
+          "En hypotese som er basert på tilfeldige gjetninger uten noen form for evidens.",
+          "En hypotese som overraskende bekreftes når man undersøker noe helt annet.",
+          "En hypotese som handler om de mest fundamentale vitenskapelige lovene."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Ifølge Robert Mertons KUDOS-normer, er det viktig at forskere etterstreber normen om universalisme. Hva går normen om universalisme ut på?",
+        "options": [
+          "Den går ut på at siden vitenskapelig praksis handler om å skape et bedre samfunn, må man forske på det som er til beste for alle.",
+          "Den går ut på at vitenskapelige påstander må kunne vurderes på bakgrunn av sitt innhold, uavhengig av hvem som fremsetter dem.",
+          "Den går ut på at man i utviklingen av vitenskapelige teorier må søke å komme frem til mest mulig allmenngyldige svar.",
+          "Den går ut på at man må unngå at vitenskapelige forskningsprosjekter styres av forskeres egeninteresse."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Det er vanlig å trekke et skille mellom en hypoteses oppdagelseskontekst og dens bekreftelseskontekst. Hvilket av følgende alternativer uttrykker best en viktig grunn til å trekke et slikt skille?",
+        "options": [
+          "Skillet er viktig fordi at dersom bekreftelseskonteksten ikke kan logisk avledes fra oppdagelseskonteksten, er hypotesen gal.",
+          "Skillet er viktig fordi hvorvidt en hypotese er støttet av evidens, er uavhengig av hvordan man oppdaget eller kom frem til hypotesen i utgangspunktet.",
+          "Skillet er viktig fordi politiske og sosiale forhold som påvirker en hypoteses oppdagelseskontekst kan overføres til hypotesens bekreftelseskontekst.",
+          "Skillet er viktig fordi oppdagelseskonteksten bestemmer om en hypotese er sann eller ikke. Dersom hypotesen ikke er oppdaget på en korrekt måte, er hypotesen gal."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Enkelte mener det lever en stor sjøorm i Loch Ness. Et av de viktigste og mest berømte «bevisene» er et kornete og uklart bilde av konturen av noe som kan se ut som en sjøorm. Skeptikere er lite imponerte. En typisk innvending er: «Bemerkelsesverdige påstander krever bemerkelsesverdig evidens. At det skulle leve en stor sjøorm i Loch Ness er i konflikt med mye av det vi vet om biologi og zoologi, og ville i utgangspunktet vært bemerkelsesverdig om det stemte. Det kornete og uklare bildet kan imidlertid forestille mye rart – det er ikke «bemerkelsesverdig» evidens for en sjøorm!» Hva er en tilsvarende måte å fremstille denne innvendingen på?",
+        "options": [
+          "Ved hjelp av hypotetisk-deduktiv metode: Fra hypotesen at det lever en stor sjøorm i Loch Ness, kan man utlede observasjoner. Problemet her er at det ikke er klart at man faktisk har fått en observasjon i tråd med prediksjonene hypotesen gir oss.",
+          "Ved hjelp av Poppers falsifikasjonisme: Kunnskapen vi har samlet i biologi og zoologi er samlet sett tilstrekkelig til å avkrefte hypotesen «det lever en stor sjøorm i Loch Ness».",
+          "Ved hjelp av Quine–Duhem-tesen: Et fotografi kan nok kalles en test, men i dette tilfellet er det svært mange feilkilder og forutsetninger du må gjøre for å kunne konkludere med at bildet faktisk viser en sjøorm.",
+          "Ved hjelp av overraskelsesprinsippet: At noen tar et kornete bilde av noe som likner en sjøorm, er ikke spesielt overraskende selv om det ikke var en sjøorm i Loch Ness."
+        ],
+        "correctChoice": 3
+      },
+      {
+        "questionText": "Hvilken av de følgende påstandene er den mest treffende beskrivelsen av noe som kan sies å være en forskjell mellom Poppers og Kuhns tenkning om vitenskap?",
+        "options": [
+          "For Popper er det viktig at vitenskapen opererer med sikkerhet. For Kuhn kan paradigmer veltes dersom det blir tilstrekkelig mange anomalier, og vi kan derfor aldri være helt sikre på at vi har den korrekte beskrivelsen av verden.",
+          "Ifølge Popper må en vitenskapelig hypotese kunne utsettes for falsifisering. Kuhn hevder at for å gjøre fremskritt, må sentrale vitenskapelige teorier og hypoteser ofte gis en viss beskyttelse. Det trengs mer enn ett resultat som ikke passer for å velte dem.",
+          "Ifølge Popper bør man sørge for at verdier ikke spiller noen rolle i vitenskapelig arbeid. Kuhn hevder derimot at vitenskapelig arbeid verken kan eller burde forsøke å frigjøre seg fra normer og verdier.",
+          "Popper er opptatt av å identifisere metoder man burde benytte for å undersøke verden på mest mulig rasjonell måte. Kuhn er i mindre grad opptatt av rasjonelle undersøkelser, og hevder at det å ha bestemte metoder ikke er spesielt viktig for vitenskapelig arbeid."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Ifølge enkelte personer har mennesker en usynlig livsenergi som sørger for at kropp og sjel er i harmoni. Ifølge disse personene kan sykdomssymptomer og helseproblemer noen ganger skyldes at livsenergien er kommet i ubalanse. Mange, inkludert Popper, ville nok sagt at denne hypotesen om årsakene til helseproblemer er uvitenskapelig. Hvordan kunne Popper argumentert for at hypotesen er uvitenskapelig?",
+        "options": [
+          "Hypotesen beskriver noe som ikke er observerbart, og kan derfor ikke testes empirisk.",
+          "Vi må forutsette for mange. Hypotesen støttes av tilleggshypoteser for å kunne teste hypotesen som må karakteriseres som ad hoc.",
+          "Hypotesen er for uklar til at vi kan utlede prediksjoner som vi kan bruke til å teste den.",
+          "Hypotesen handler om forhold vi ikke kan ha sikker kunnskap om."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Vitenskapsteoretikere har lenge vært opptatt av å formulere et kriterium som skiller vitenskap fra ikke-vitenskap (og spesielt ikke-vitenskap som utgir seg for å være vitenskap – såkalt pseudovitenskap). Hvilken av følgende påstander uttrykker best Poppers versjon av demarkasjonskriteriet?",
+        "options": [
+          "Vitenskapelige hypoteser må kunne verifiseres eller bekreftes, og hypotesene bør være dristige og vidtrekkende.",
+          "Vitenskap er basert på den vitenskapelige metode, dvs. hypotetisk-deduktiv metode.",
+          "Vitenskap er basert på observasjon og eksperiment, og induktiv generalisering av resultater fra observasjon og eksperiment.",
+          "Vitenskapelige hypoteser må kunne falsifiseres eller avkreftes, og hypotesene bør være dristige og vidtrekkende."
+        ],
+        "correctChoice": 3
+      },
+      {
+        "questionText": "Mange vitenskapsfilosofer, inkludert Popper, har påpekt at bruk av ad hoc-hypoteser er problematisk. Hvilket av følgende tilfeller er å betrakte som illegitim bruk av ad hoc-hypoteser, ifølge Popper?",
+        "options": [
+          "En observasjon eller et eksperimentelt resultat som taler mot hypotesen, ignoreres fordi man har uavhengig støtte for at hypotesen er korrekt.",
+          "En observasjon eller et eksperimentelt resultat som taler mot en hypotese leder til at hypotesen forkastes og erstattes med en ny hypotese som er i stand til å omfavne observasjonen eller det eksperimentelle resultatet.",
+          "En observasjon eller et eksperimentelt resultat som taler mot en hypotese, imøtegås med ytterligere hypoteser som har som mål å «redde» den opprinnelige hypotesen.",
+          "En observasjon eller et eksperimentelt resultat som taler mot en hypotese, imøtegås ved at hypotesen reformuleres."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hvilket av følgende utsagn passer best som beskrivelse av det Kuhn omtaler som normalvitenskap?",
+        "options": [
+          "I perioder kalt normalvitenskap forsøker man å konstruere nye paradigmer som kan ivareta grunninnsiktene i det opprinnelige paradigmet, men på en klarere og mer presis måte.",
+          "I perioder med normalvitenskap forsøker man å utvikle stadig mer detaljerte og sofistikerte hypoteser basert på forutsetningene gitt av paradigmet, og forsøker å teste disse.",
+          "I perioder kalt normalvitenskap forsøker man å gjendrive kjernen i paradigmet ved å utsette de sentrale teoretiske og metodologiske antakelsene for systematisk undersøkelse og eksperimentering.",
+          "I perioder kalt normalvitenskap forsøker man å oppdage nye fenomener ved å formulere radikalt nye teoretiske og metodologiske rammeverk samt nye eksperimentelle protokoller og nye vitenskapelige instrumenter."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "På 1800-tallet oppdaget man at observasjoner av planeten Merkurs bane rundt solen på noen punkter avvek fra det Newtons lover skulle tilsi. Noen astronomer påpekte da at dette var et avvik fra Newtons lover kun dersom man antok at det ikke også var en annen, hittil uobservert planet som gikk i bane mellom Merkur og solen. Noen av dem antok at det fantes en slik planet, og ga den navnet ‘Vulkan’. Hvilken av følgende vitenskapsfilosofiske poenger er det disse astronomenes påpekning best illustrerer?",
+        "options": [
+          "Poppers maksime om at vitenskapelige hypoteser skal være falsifiserbare, selv om enkelte vitenskapsfolk av og til motsetter seg falsifisering.",
+          "Sobers prinsipp om at hypoteser bekreftes når de kan gjøre rede for overraskende observasjoner.",
+          "Poppers skepsis mot at vi noensinne kan ha godt induktivt belegg, altså en betydelig positiv grad av bekreftelse, for vitenskapelige teorier.",
+          "Quine–Duhem-tesen, at prediksjoner vi kan bruke til å teste hypoteser, ikke kan utledes fra enkelthypoteser, men kun fra større nettverk av teorier og bakgrunnskunnskap."
+        ],
+        "correctChoice": 3
+      },
+      {
+        "questionText": "Trine forsker på ungdomskriminalitet. Hun ønsker å finne ut hva som er årsaken til at det har blitt mer kriminalitet blant ungdommer i byen A i Midt-Norge. Hvilken av de følgende fremgangsmåtene stemmer best med det hypotetisk-deduktive skjemaet?",
+        "options": [
+          "Først formulerer Trine hypotesen om at økt ungdomskriminalitet i A skyldes at flere barn vokser opp uten fedre. Så utleder hun at hvis hypotesen stemmer, så bør vi forvente en lignende kriminalitetsutvikling i andre byer hvor flere barn vokser opp uten fedre. Hun finner ingen slik sammenheng, og konkluderer med at forklaringen er avkreftet.",
+          "Først observerer Trine ungdomsmiljøene i byen på en mest mulig nøytral og objektiv måte. Deretter undersøker hun om noen av observasjonene hennes kan være påvirket av bias. Til slutt former hun en hypotese om årsaken til kriminaliteten, basert på observasjonene, gjennom en deduktivt gyldig slutning.",
+          "Først lager Trine et omfattende spørreskjema. Så sender hun ut skjemaet til et representativt utvalg av ungdommene i A. Trine studerer svarene nøye, og finner ut at ungdommer som har begått lovbrudd ofte har foreldre som har blitt arbeidsledige i løpet av siste år. Trine utleder den følgende hypotesen: Ustabil familieøkonomi er én av årsakene til kriminalitetsøkningen i A.",
+          "Først formulerer Trine hypotesen om at økt ungdomskriminalitet i A skyldes at flere barn vokser opp uten fedre. Så finner hun ut at hypotesen kohererer med kjent psykologisk kunnskap om kriminalitet. Hypotesen kan også forklare økt frafall på videregående skole i A. Trine utleder at hypotesen inntil videre kan anses å være korroborert."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilket av de følgende alternativene er et eksempel på et epistemologisk spørsmål?",
+        "options": [
+          "Er alt som skjer i universet bestemt (determinert) av forutgående årsaker?",
+          "Finnes det kulturuavhengige standarder for hva som er moralsk riktig og galt?",
+          "Hva bør vi gjøre for å unngå å ta feil om hvordan virkeligheten er?",
+          "Hva er forskjellen mellom sosiale, psykologiske og fysiske fenomener?"
+        ],
+        "correctChoice": 2
+      },  {
+        "questionText": "Hva kjennetegner et teleologisk (Aristotelisk) natursyn?",
+        "options": [
+          "At prosesser i naturen beskrives som å realisere visse mål.",
+          "At Gud har skapt naturen og naturens lover.",
+          "At vitenskapen bør ha som mål å avdekke lovmessighet i naturen.",
+          "At all bevegelse vi observerer skyldes mekaniske krefter som virker på materie."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Se for deg at Inga resonnerer på følgende måte: «Alle hendelser er fullt ut årsaksbestemte. Det betyr for eksempel at Utøya-terroristen ikke kunne ha valgt å handle annerledes enn han gjorde, gitt sine gener, oppvekst og andre faktorer som lå utenfor terroristens kontroll. Men terroristen må likevel sies å ha handlet av fri vilje. I alle fall fram til han ble stoppet av politiet handlet han uhindret helt i tråd med sine ønsker og sin oppfatning av situasjonen». Hvordan er det mest nærliggende å beskrive synet til Inga?",
+        "options": [
+          "Inga har et hardt deterministisk syn.",
+          "Inga har et kommunitaristisk syn.",
+          "Inga har et kompatibilistisk syn.",
+          "Inga har et libertariansk syn."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Det finnes ulike fysikalistiske teorier om hva bevissthet er. Den australske filosofen Frank Jackson har gitt et argument mot fysikalisme som tar utgangspunkt i et tankeeksperiment om nevroforskeren Mary, som opplever verden gjennom en svart-hvitt-skjerm. Hva vil være en rimelig framstilling av Jacksons innvending mot fysikalismen?",
+        "options": [
+          "Selv om man har naturvitenskapelig kunnskap om alle fysiske, kjemiske, biologiske, etc. fakta om en person som ser en bestemt fargenyanse, så trenger man ikke dermed vite hvordan denne fargenyansen ser ut for denne personen.",
+          "De følelsene eller opplevelsene som noen påføres har ofte stor etisk betydning, noe som bl.a. kommer til uttrykk i vår plikt til ikke å påføre folk unødvendig smerte; fysiske forskjeller i eller mellom folk har ikke den samme etiske eller verdimessige betydningen.",
+          "Våre bevisste opplevelser er typisk behagelige eller ubehagelige, lystbetonte eller ulystbetonte, osv., men det gir liten mening å omtale en hjernetilstand som behagelig eller ubehagelig, lystbetont eller ulystbetont.",
+          "Det å være bevisst på noe, eller å oppleve noe, er ikke en rent mental tilstand, men noe som fordrer at vi tar hele kroppen i bruk, i et komplekst, aktivt samspill med omgivelsene våre; hjernetilstander utgjør altså bare én blant flere faktorer i denne helheten."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "I filmen Ex Machina er den kunstig intelligente roboten Ava en sentral skikkelse. Lars resonnerer: «På den ene siden er Ava en maskin. Hun består ikke av biologisk materiale. På den andre siden kan Ava stille spørsmål og gi svar som om hun var et menneske. Ytre stimuli forårsaker indre tilstander hos henne, og disse tilstandene har de samme virkningene som for eksempel ønsker og oppfatninger har hos oss. Hun kan gi uttrykk for sorg, eller for glede, når slike følelser er passende. Hun kan oppføre seg flørtende, og manipulerende. Det er derfor rimelig å anta at Ava har bevissthet og er intelligent på samme måte som oss mennesker». Hvilket syn på bevissthet reflekterer Lars' resonnement?",
+        "options": [
+          "Det reflekterer et identitetsteoretisk syn.",
+          "Det reflekterer et dualistisk syn.",
+          "Det reflekterer et funksjonalistisk syn.",
+          "Det reflekterer et enaktivistisk syn."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hanne er teknologisk determinist. Hvilket utsagn representerer best Hannes posisjon som teknologisk determinist?",
+        "options": [
+          "Kunstig intelligens kommer til å ta over jobbene til svært mange i fremtiden. KI vil gjøre jobber så mye mer effektivt enn mennesker at bedrifter blir nødt til å benytte KI hvis de vil henge med i konkurransen.",
+          "Kunstig intelligens kan komme til å ta over jobbene til svært mange i fremtiden. Men selv om enkeltbedrifter kan ha en økonomisk interesse av å erstatte mennesker med KI, kan vi som samfunn i alle fall i noen grad regulere dette og styre utviklingen dit vi vil.",
+          "Kunstig intelligens er bare et verktøy som all annen teknologi. Vi velger selv om vi vil bruke en tørketrommel eller fremdeles bruke et gammeldags tørkestativ, og slik er det med KI også; vil kan bruke det hvis vi vil, men må ikke.",
+          "Kunstig intelligens kommer aldri til å erstatte mennesker i de fleste jobber, ettersom de fleste jobber krever noe grad av kreativitet, spontanitet og evne til å samhandle med andre mennesker, noe KI aldri kan klare ettersom KI mangler bevissthet."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "I debatten om hvorvidt mennesker har fri vilje, hva menes med kompatibilisme?",
+        "options": [
+          "Selv om alle prosesser i universet, inkludert mentale prosesser, skulle være fullstendig determinert, utelukker det ikke at mennesker faktisk har fri vilje.",
+          "Selv om de aller fleste prosesser i universet, inkludert mentale prosesser, er fullstendig determinert, er noen av valgene vi gjør ikke forutbestemte.",
+          "Selv om mange prosesser i universet, inkludert mentale prosesser, er fullstendig determinert, viser mikrofysikken at noen hendelser også er vilkårlige.",
+          "Selv om alle prosesser i universet, inkludert mentale prosesser, er fullstendig determinert, er illusjonen av at vi har fri vilje viktig for vår selvforståelse og evne til å ta ansvar for våre handlinger."
+        ],
+        "correctChoice": 0
+      }
+    ]
+  }
+  

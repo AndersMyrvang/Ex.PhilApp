@@ -1,0 +1,276 @@
+{
+    "examId": "exam_4",
+    "questions": [
+      {
+        "questionText": "Hva mener Platon med at erkjennelse er gjenerindring (gresk: anamnesis)?",
+        "options": [
+          "Vi husker og erkjenner fortrengte opplevelser, gjennom psykoanalyse.",
+          "Vi husker forestillinger som er dannet av ytre inntrykk.",
+          "Kunnskapen er medfødt. Den må bare bringes til overflaten eller huskes."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Platons idealstat er:",
+        "options": [
+          "Et demokrati.",
+          "Et elitestyre basert på adelig opprinnelse og rikdom.",
+          "Et elitestyre basert på gode medfødte egenskaper."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Platonske ideer er:",
+        "options": [
+          "Bleke avskygninger av sansbare ting.",
+          "Oppfatninger om verden som ennå ikke har blitt vitenskapelig etterprøvd.",
+          "Perfekte idealtyper som sansbare ting etterligner i større eller mindre grad."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Det følgende er en grunntanke i Poppers falsifikasjonisme:",
+        "options": [
+          "At vitenskapelige hypoteser ikke kan bevises, bare motbevises.",
+          "At hypoteser kan fremme vitenskapelig og teknisk innovasjon selv om de er usanne.",
+          "At fabrikasjon av data er mer utbredt i vitenskapelig praksis enn vanligvis antatt."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Platons lignelse om den delte linjen (linjelignelsen) er en beskrivelse av:",
+        "options": [
+          "Den geometriske erkjennelsen som Menons slave kommer til ved hjelp av Sokrates’ spørsmål.",
+          "De ulike nivåene som den ideelle staten bør bestå av.",
+          "De ulike formene for kunnskap og deres gjenstander."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "En teori om hva kunnskap er og hva som utgjør grunnlaget for kunnskap kalles:",
+        "options": [
+          "Epistemologi",
+          "Paradigme",
+          "Ontologi"
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hvilken av disse påstandene beskriver best Aristoteles’ syn på forandring?",
+        "options": [
+          "All forandring innebærer enten tilblivelse eller tilintetgjørelse av noe.",
+          "All forandring involverer bevegelse.",
+          "All forandring er en form for aktualisering eller virkeliggjøring."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hva menes med å si at observasjoner er teoriladete?",
+        "options": [
+          "At hva vi observerer, avhenger av våre teorier og bakgrunnsantakelser.",
+          "At de kan brukes til å bekrefte hypoteser eller teorier.",
+          "At de kan brukes til å avkrefte eller falsifisere hypoteser eller teorier."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilken av følgende beskrivelser passer best på Kuhns syn på naturvitenskapenes historie:",
+        "options": [
+          "Naturvitenskapene har utviklet seg lineært gjennom at vi gradvis øker vår kunnskap om verden.",
+          "Naturvitenskapenes historie preges av at vi sakte, men sikkert, har skaffet oss økt forståelse for vitenskapenes etiske implikasjoner.",
+          "Naturvitenskapenes historie karakteriseres av paradigmer som avløser hverandre gjennom vitenskapelige revolusjoner."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hvilken av følgende påstander beskriver best Aristoteles’ syn på lykke?",
+        "options": [
+          "Lykken er en subjektiv opplevelse som varierer fra person til person, og som det ikke finnes objektive sannheter om.",
+          "Lykke er et spørsmål om å leve et godt menneskeliv, nemlig et liv i overensstemmelse med den menneskelige natur.",
+          "Nytelse er ikke en viktig del av det lykkelige liv. Et lykkelig liv handler om å forkaste all kroppslig nytelse til fordel for et liv i askese."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hva vil det si å gi en teleologisk forklaring av noe?",
+        "options": [
+          "Å gi en forklaring som henviser til de bevirkende årsakene til at noe skjedde.",
+          "Å gi en forklaring som henviser til religiøse eller åndelige forhold.",
+          "Å gi en forklaring som henviser til formålet med noe."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Ifølge Aristoteles er slike dygder som generøsitet og besindighet ...",
+        "options": [
+          "… en gylden middelvei mellom for mye og for lite.",
+          "… noe man utvikler ved å gjenerindre ideen dygd.",
+          "… bare etterstrebelsesverdige hvis de fører til gode konsekvenser."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hva innebærer sosialdarwinismen?",
+        "options": [
+          "At samfunnet bør organiseres slik at det er en friest mulig konkurranse om godene, der noen vinner mens andre går under.",
+          "At samfunnet bør organiseres slik at evolusjonsbiologene får en sentral rolle i offentligheten.",
+          "At samfunnet bør aktivt støtte de som er best tilpasset (‘the fittest’) for å forsikre at de overlever og forplanter seg."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Ideer om samfunnskontrakten har til felles at …",
+        "options": [
+          "… vi må følge loven fordi vi, eller våre forfedre, i en tenkt situasjon ville ha på en eller annen måte har samtykket til det.",
+          "… de rikeste i samfunnet legger premissene som de øvrige samfunnsmedlemmene blir nødt til å gå med på.",
+          "… det er valgfritt om man vil følge loven – man kan alltid ‘si opp kontrakten’ med samfunnet."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Descartes’ metodiske tvil har som mål å…",
+        "options": [
+          "… bevise at sikker kunnskap om virkeligheten må baseres på sanseerfaring og induksjon.",
+          "… finne sanne og sikre grunnsetninger som man kan bygge erkjennelsen på.",
+          "… bevise at vi ikke kan vite noe sikkert om virkeligheten."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Gjennom sin metodiske tvil tviler Descartes på",
+        "options": [
+          "… bare det sansene forteller ham om virkeligheten.",
+          "… alt som det er mulig å tvile på",
+          "… bare det han har lært under oppveksten."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Ifølge Galileo Galilei er naturen …",
+        "options": [
+          "… kun forståelig gjennom sansning.",
+          "… bygget opp etter matematiske prinsipper.",
+          "… alltid formålsrettet."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Newton viste at …",
+        "options": [
+          "… naturen ikke kan beskrives som styrt av lover.",
+          "… det er de samme mekaniske lovene som hersker over alt.",
+          "… det er ulike naturlover på jorden og blant himmellegemene."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Thomas Hobbes’ teori om naturtilstanden skal vise at …",
+        "options": [
+          "… menneskeheten bør forsøke å leve mer i pakt med naturen.",
+          "… det er i menneskenes egen interesse å etablere en statsmakt.",
+          "… enhver statlig begrensning av friheten vår er umoralsk"
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hva er skillet mellom naturvitenskap og åndsvitenskap ifølge Dilthey?",
+        "options": [
+          "Vi kan være sikker på naturvitenskapens innsikter først når åndsvitenskapen har bevist at sikker viten er mulig.",
+          "Det er ikke noe skille: både naturen og mennesket er underlagt de samme universelle lovmessigheter som det er vitenskapens oppgave å avdekke.",
+          "Naturvitenskapen forklarer naturens lovmessige årsaksforløp, åndsvitenskapen søker å forstå mennesker og kultur gjennom å studere meningsytringer."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hva er hermeneutikk?",
+        "options": [
+          "Et teoretisk grunnlag for å fremme vilkårlige påstander om forfatterens intensjon.",
+          "Et lukket system for optimalisert konservering.",
+          "Et systematisert sett med prinsipper og regler for å gjennomføre rimelige fortolkninger av meningsytringer."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Å følge \"Det kategoriske imperativ\", sier Kant, innebærer å …",
+        "options": [
+          "… kategorisk bøye seg for samfunnets lover og regler.",
+          "… kategorisk handle slik en snill person ville handlet.",
+          "… lytte til, og handle på grunn av, moralloven i ens egen fornuft."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Når det gjelder virkeligheten, mener Hume at …",
+        "options": [
+          "… vi kan ha sikker viten om den basert på sanseinntrykk.",
+          "… induksjonsproblemet gjør det umulig for oss å vite noe sikkert om den.",
+          "… matematikken forteller oss hvordan dens struktur er"
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hume mente at er- utsagn og bør-utsagn …",
+        "options": [
+          "… begrunner hverandre gjensidig.",
+          "… dreier seg om helt forskjellige forhold.",
+          "… i bunn og grunn er det samme."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "For at mennesket skal kunne handle moralsk, hevder Kant, må det …",
+        "options": [
+          "… være i stand til å gå på tvers av ens lyster og tilbøyeligheter.",
+          "… kunne følge de riktige moralske følelsene.",
+          "… ha blitt oppdratt i en liberal frihetskultur."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "A priori kunnskap er:",
+        "options": [
+          "Kunnskap som er uavhengig av sanseinntrykk.",
+          "Kunnskap som bygger på sanseinntrykk.",
+          "Kunnskap som har høyere prioritet enn annen kunnskap."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Den klassiske utilitaristiske (nyttefilosofiske) tese innebærer …",
+        "options": [
+          "… at bare samfunnsnyttige mennesker kan ha fulle rettigheter.",
+          "… at politikkens mål er størst mulig lykke for flest mulig.",
+          "… mest mulig økonomisk nytte for flertallet."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hvilket av de følgende alternativene er det mest nærliggende å anse som en innvending mot den lineære modellen?",
+        "options": [
+          "Teknologiske nyvinninger fører ikke bare til intenderte fordeler, men også til uintenderte problemer.",
+          "Den lineære modellen legger for lite vekt på verdien av uavhengig grunnforskning.",
+          "Forskere er bare mennesker, de kan være fristet til å begå fusk for å oppnå berømmelse."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilket av følgende alternativer er ikke en av CUDOS-normene",
+        "options": [
+          "Ansvarlighet («concern»)",
+          "Universalisme («universalism»)",
+          "Systemisk skeptisisme («organized skepticism»)"
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilket av følgende utsagn er usant om den lineære modellen for forholdet mellom vitenskap og samfunn?",
+        "options": [
+          "Den lineære modellen innebærer at forskere hovedsakelig skal jobbe med teknologiutvikling.",
+          "Den lineære modellen forutsetter at investering i grunnforskning vil gi gevinst i form av verdiskapning i samfunnet.",
+          "Den lineære modellen innebærer at man ikke skal la politiske vurderinger påvirke søken etter sannhet."
+        ],
+        "correctChoice": 0
+      }
+    ]
+  }
+  

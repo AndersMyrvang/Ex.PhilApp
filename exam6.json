@@ -1,0 +1,46 @@
+{
+    "examId": "exam_6",
+    "questions": [
+      {
+        "questionText": "Fuglearten storjordspurv holder til på Galapagos og kjennetegnes ved å ha større og kraftigere nebb enn beslektede arter. Hvilken av de følgende alternativene er det mest nærliggende å regne som en teleologisk forklaring av at en bestemt storjordspurv har et kraftig nebb?",
+        "options": [
+          "Storjordspurven har kraftig nebb for å kunne knekke nøtter og spise store frø.",
+          "Storjordspurven har kraftig nebb fordi tidligere generasjoner med større nebb har vært mer tilpasningsdyktige enn spurver med mindre nebb.",
+          "Storjordspurven har kraftig nebb fordi Gud har skapt den slik.",
+          "Storjordspurven har kraftig nebb fordi et slikt nebb er et typisk trekk ved arten fuglen tilhører."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Betegnelsen «det mekanistiske natursynet» brukes om natursynet som begynte å ta form blant naturvitere og filosofer i Europa på 1500-tallet. Hvilket av utsagnene under stemmer best overens med det mekanistiske natursynet?",
+        "options": [
+          "Enhver bevegelse kan i prinsippet beskrives og forutsies ved hjelp av matematikk.",
+          "Det er en vesentlig, kvalitativ forskjell mellom levende organismer, og ikke-levende gjenstander.",
+          "Vi må skille mellom tre typer forandring: kvalitativ forandring, kvantitativ forandring og substansiell forandring (at noe oppstår eller slutter å eksistere).",
+          "De fysiske lovene som gjelder for objekter på jorda, er forskjellige fra de fysiske lovene som gjelder for himmellegemer."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Les den følgende kommentaren:\n\n«Når et menneske har smerter, er de underliggende fysiske prosessene helt forskjellige fra når for eksempel en blekksprut har smerter. Det er også mulig å tenke seg utenomjordiske vesener som kan oppleve smerter, selv om de fysisk er enda mer forskjellige fra oss mennesker enn det blekkspruter er.»\n\nBetraktninger av denne typen utgjør et spesielt stort problem for en bestemt type teori om bevissthet. Hvilken?",
+        "options": [
+          "Identitetsteori",
+          "Funksjonalisme",
+          "Kroppsliggjøringsteori",
+          "Fenomenologisk teori"
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Les den følgende uttalelsen: «Kjernekraft i seg selv er verken godt eller ondt. Det er først når mennesker velger å bruke kraften i vitenskapen til skade for miljø og liv at teknologien kan bli «ond».» Hvilket teknologisyn gir uttalelsen uttrykk for?",
+        "options": [
+          "Et instrumentalistisk teknologisyn.",
+          "Et deterministisk teknologisyn.",
+          "Et kompatibilistisk teknologisyn.",
+          "Et relasjonelt teknologisyn."
+        ],
+        "correctChoice": 0
+      }
+    ]
+  }
+  

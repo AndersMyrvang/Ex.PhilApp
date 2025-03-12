@@ -1,0 +1,276 @@
+{
+    "examId": "exam_3",
+    "questions": [
+      {
+        "questionText": "Hvilken av følgende beskrivelser passer best på Kuhns syn på naturvitenskapenes historie:",
+        "options": [
+          "Naturvitenskapene har utviklet seg lineært gjennom at vi gradvis øker vår kunnskap om verden.",
+          "Naturvitenskapenes historie karakteriseres av paradigmer som avløser hverandre gjennom vitenskapelige revolusjoner.",
+          "Naturvitenskapenes historie preges av at vi sakte, men sikkert, har skaffet oss økt forståelse for vitenskapenes etiske implikasjoner."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hvilken av disse påstandene beskriver best Aristoteles’ syn på forandring?",
+        "options": [
+          "All forandring involverer bevegelse.",
+          "All forandring innebærer enten tilblivelse eller tilintetgjørelse av noe.",
+          "All forandring er en form for aktualisering eller virkeliggjøring."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hva kjennetegner det aksiomatisk-deduktive vitenskapsidealet?",
+        "options": [
+          "En vitenskap bør bygges opp slik at man tar som utgangspunkt de mest grunnleggende prinsippene, for så å avlede logisk de andre kjensgjerningene innen kunnskapsområdet.",
+          "En vitenskap bør bygges opp slik at alle kjensgjerninger og generelle prinsipper innen et kunnskapsområde må kunne tilbakeføres til konkrete sanseerfaringer.",
+          "En vitenskap bør bygges opp slik at alle generelle prinsipper eller lover må kunne forankres i filosofisk innsikt den rene fornuftens former, og ikke la seg forstyrre av sanseerfaringer."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Ifølge Aristoteles har substanser følgende grunntrekk:",
+        "options": [
+          "Form og stoff.",
+          "Utstrekning og forgjengelighet.",
+          "Indre og ytre."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilken av følgende påstander beskriver best Aristoteles’ syn på lykke?",
+        "options": [
+          "Lykken er en subjektiv opplevelse som varierer fra person til person, og som det ikke finnes objektive sannheter om.",
+          "Nytelse er ikke en viktig del av det lykkelige liv. Et lykkelig liv handler om å forkaste all kroppslig nytelse til fordel for et liv i askese.",
+          "Lykke er et spørsmål om å leve et godt menneskeliv, nemlig et liv i overensstemmelse med den menneskelige natur."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilket av følgende forhold må, for Aristoteles, kunne betraktes som en nødvendig betingelse for å realisere seg selv og oppnå det gode liv?",
+        "options": [
+          "Å oppnå selvinnsikt gjennom å fornekte materielle drifter og nytelse.",
+          "Å bruke sin fornuft i sosialt samkvem med andre rasjonelle skapninger.",
+          "En stat der lederne tilordner enhver den rollen de er best egnet til."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Thomas Hobbes’ teori om naturtilstanden skal vise at …",
+        "options": [
+          "… menneskeheten bør forsøke å leve mer i pakt med naturen.",
+          "… enhver statlig begrensning av friheten vår er umoralsk.",
+          "… det er i menneskenes egen interesse å etablere en statsmakt."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Ifølge substansdualisme …",
+        "options": [
+          "… er alt, inkludert kroppen, dypest sett ikke annet enn bevissthet.",
+          "… er sjelen (sinnet) dypest sett fysisk.",
+          "… er kropp og sjel (sinn) grunnleggende ulike typer av gjenstander."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Descartes’ rasjonalisme innebærer at …",
+        "options": [
+          "… vi har forestillinger som ikke stammer fra sansning, og vi kan tilegne oss kunnskap uavhengig av sansning.",
+          "… det ikke finnes noe i tenkningen som ikke først har vært i sansningen.",
+          "… all ekte kunnskap enten er analytisk eller kan tilbakeføres til sansning."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Ifølge Galileo Galilei er naturen …",
+        "options": [
+          "… alltid formålsrettet.",
+          "… bygget opp etter matematiske prinsipper.",
+          "… kun forståelig gjennom sansning."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hva er vesensegenskapen ved jeg-et ifølge Descartes?",
+        "options": [
+          "At det kan deles inn i mindre enheter.",
+          "Utstrekning.",
+          "Tenkning"
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hva mener Descartes med res cogitans?",
+        "options": [
+          "En utstrakt substans, verden.",
+          "En tenkende substans, sjelen.",
+          "Det samme som konglekjertelen."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "En av CUDOS-normene handler om vitenskapens interessefrihet («disinterestedness»). Hva menes med dette?",
+        "options": [
+          "At vitenskapsfolk ikke skal la personlige interesser påvirke resultatene av undersøkelsene deres.",
+          "At vitenskapsfolk fortrinnsvis skal forske på spørsmål de ikke er personlig interesserte i.",
+          "At vitenskapsfolk skal ta hensyn til samfunnets beste i undersøkelsene sine."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "FFP («fabrication, falsification & plagiarism») betegner klare brudd på forskningsetiske hensyn. Hvilket av følgende faller ikke inn under betegnelsen «FFP»:",
+        "options": [
+          "Å ikke informere deltakere i et forskningseksperiment om at de faktisk deltar i et eksperiment.",
+          "Å bruke data fra et eksperiment utført av andre uten å opplyse om det.",
+          "Å fylle inn manglende data med data som virker rimelige ut ifra hypotesen."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Hvilket av følgende utsagn er usant om den lineære modellen for forholdet mellom vitenskap og samfunn?",
+        "options": [
+          "Den lineære modellen innebærer at forskere hovedsakelig skal jobbe med teknologiutvikling.",
+          "Den lineære modellen forutsetter at investering i grunnforskning vil gi gevinst i form av verdiskapning i samfunnet.",
+          "Den lineære modellen innebærer at man ikke skal la politiske vurderinger påvirke søken etter sannhet."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Kants 2. formulering av \"Det kategoriske imperativ\" kalles også \"humanitetsformuleringen\". Denne innebærer at …",
+        "options": [
+          "… Kant er human-etiker.",
+          "… våre handlinger må være så humane og medfølende som mulig.",
+          "… det er moralsk forbudt å bruke mennesker som rene midler."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Når det gjelder virkeligheten, mener Hume at …",
+        "options": [
+          "… vi kan ha sikker viten om den basert på sanseinntrykk.",
+          "… induksjonsproblemet gjør det umulig for oss å vite noe sikkert om den.",
+          "… matematikken forteller oss hvordan dens struktur er."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "En formulering av Kants kategoriske imperativ er:",
+        "options": [
+          "Du skal handle slik at konsekvensene av handlingen din skaper mest mulig lykke for flest mulig.",
+          "Du skal handle med henblikk på å gjøre andre glade i deg, slik at de hjelper deg når du trenger det.",
+          "Handle bare etter den maksime gjennom hvilken du samtidig kan ville at den skal bli en allmenn lov."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Rasjonalisme er:",
+        "options": [
+          "En erkjennelsesteoretisk posisjon som vektlegger fornuftens rolle i å finne sikker kunnskap.",
+          "En psykologisk beskrivelse av hvordan fornuften fungerer.",
+          "En filosofisk retning basert på sunn fornuft."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Utilitarismen er en …",
+        "options": [
+          "… dydsetikk.",
+          "… konsekvensetikk.",
+          "… pliktetikk."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "I følge Kant er et \"hypotetisk imperativ\" …",
+        "options": [
+          "… hypotetiske beskrivelser av moralske valgsituasjoner.",
+          "… et krav innen forskning som arbeider med hypoteser.",
+          "… noe som forteller oss om forholdet mellom mål og midler."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Poppers kritiske rasjonalisme betegner …",
+        "options": [
+          "… at den som tenker fornuftig også er ufeilbarlig",
+          "… den epistemologiske grunntanken at fornuften alene gir sikker viten",
+          "… en tro på fornuften, samtidig som at alle som tenker fornuftig også kan ta feil"
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Hva kjennetegner pseudovitenskap, ifølge Popper?",
+        "options": [
+          "At man utvikler og fremmer teorier uten å bestrebe seg på å teste dem på en måte som er egnet til å få fram deres eventuelle svakheter.",
+          "At man utvikler og fremmer teorier som ikke stemmer overens med virkeligheten.",
+          "At man begrunner teorier ved å vise til oppdiktede data."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Det følgende er en grunntanke i Poppers falsifikasjonisme:",
+        "options": [
+          "At fabrikasjon av data er mer utbredt i vitenskapelig praksis enn vanligvis antatt.",
+          "At hypoteser kan fremme vitenskapelig og teknisk innovasjon selv om de er usanne.",
+          "At vitenskapelige hypoteser ikke kan bevises, bare motbevises."
+        ],
+        "correctChoice": 2
+      },
+      {
+        "questionText": "Platonske ideer er:",
+        "options": [
+          "Perfekte idealtyper som sansbare ting etterligner i større eller mindre grad.",
+          "Bleke avskygninger av sansbare ting.",
+          "Oppfatninger om verden som ennå ikke har blitt vitenskapelig etterprøvd."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Platons idealstat er:",
+        "options": [
+          "Et elitestyre basert på adelig opprinnelse og rikdom.",
+          "Et elitestyre basert på gode medfødte egenskaper.",
+          "Et demokrati."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Platons lignelse om den delte linjen (linjelignelsen) er en beskrivelse av:",
+        "options": [
+          "De ulike nivåene som den ideelle staten bør bestå av.",
+          "De ulike formene for kunnskap og deres gjenstander.",
+          "Den geometriske erkjennelsen som Menons slave kommer til ved hjelp av Sokrates’ spørsmål."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hva er hermeneutikk?",
+        "options": [
+          "Et lukket system for optimalisert konservering.",
+          "Et systematisert sett med prinsipper og regler for å gjennomføre rimelige fortolkninger av meningsytringer.",
+          "Et teoretisk grunnlag for å fremme vilkårlige påstander om forfatterens intensjon."
+        ],
+        "correctChoice": 1
+      },
+      {
+        "questionText": "Hva betyr naturlig seleksjon?",
+        "options": [
+          "Kun de aller sterkeste individer i en populasjon lykkes i å føre arvematerialet videre.",
+          "Individuelle forskjeller innad i en art gir ulike sjanser for overlevelse og videreføring av arvemateriale, noe som fører de individuelle forskjellene videre.",
+          "Favorisering av atferd som opprettholder den naturlige arten som helhet, selv om det skulle gå på bekostning av individet."
+        ],
+        "correctChoice": 0
+      },
+      {
+        "questionText": "Den såkalte “københavnertolkningen” av kvantemekanikken forbindes med Niels Bohr. Ifølge denne forståelsen…",
+        "options": [
+          "gir det ikke mening å snakke om en partikkels posisjon uten at man spesifiserer bestemte eksperimenter man bruker til målingen.",
+          "er kvantemekanikken en rent teoretisk disiplin, uten eksperimentelle konsekvenser.",
+          "har vi a priori kunnskap om at enhver hendelse har en årsak, selv når det er prinsipielt umulig å finne årsaken."
+        ],
+        "correctChoice": 0
+      }
+    ]
+  }
+  
