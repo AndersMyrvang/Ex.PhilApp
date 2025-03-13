@@ -81,6 +81,23 @@
   background-color: #0056b3;
 }
 
+.tempSubmitButton {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #28a745; /* New color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tempSubmitButton:hover {
+  background-color: #1e7e34; /* New hover color */
+}
+
 .navContainer {
   display: flex;
   justify-content: space-between;
@@ -152,7 +169,7 @@
 
 :global(body.dark-mode) .backgroundExam {
   /* Replace or overlay your dark background image */
-  background: url("/morkTenkLang.png") no-repeat center center;
+  background: url("/blaTenkLang.png") no-repeat center center;
   background-size: cover;
   /* Fallback solid background if the image fails to load: */
   background-color: #102a43;
@@ -185,17 +202,6 @@
 :global(body.dark-mode) .selected {
   background-color: #bcccdc;
   color: #102a43;
-}
-
-/* Buttons: a darker base with lighter hover */
-:global(body.dark-mode) .submitButton {
-  background-color: #102a43;
-  color: #f0f4f8;
-}
-
-:global(body.dark-mode) .submitButton:hover {
-  background-color: #829ab1;
-  color: #f0f4f8;
 }
 
 /* Navigation buttons in dark mode */

@@ -23,7 +23,7 @@ body {
 
 body.dark-mode {
   background-color: #102a43 ;
-  color: #e0e0e0;
+  color: #ffffff;
 }
 
 :global(.pageWrapper) {

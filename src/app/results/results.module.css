@@ -7,7 +7,7 @@
     min-height: 100vh;
     margin: 0;
     padding: 1rem;
-    background: url("../../../public/tenkBok.jpg") no-repeat center center;
+    background: url("../../../public/tenkLang.png") no-repeat center center;
     background-size: cover;
 }
 
@@ -72,7 +72,7 @@
 */
 :global(body.dark-mode) .backgroundExam {
     /* Optionally swap to a darker background image, or just use a solid fallback */
-    background: url("../../../public/morkTenkLang.png") no-repeat center center;
+    background: url("../../../public/blaTenkLang.png") no-repeat center center;
     background-size: cover;
     /* Fallback if image fails to load */
     background-color: #102a43; 
