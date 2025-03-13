@@ -61,8 +61,13 @@ const ResultaterPage: React.FC = () => {
       <div className={styles.resultsContainer}>
         <h1 className={styles.title}>Dine resultater</h1>
         <ul className={styles.resultsList}>
-          {results.map((res, index) => (
-            <li key={index} className={styles.resultItem}>
+          {results.map((res) => (
+            <li
+              key={res.id}
+              className={styles.resultItem}
+              onClick={() => router.push(`/results/${res.id}`)}
+              style={{ cursor: "pointer" }}
+            >
               <p>
                 <strong>Eksamens-ID:</strong> {res.examId}
               </p>
