@@ -11,7 +11,7 @@ export default function HomePage() {
       <header className={styles.heroSection}>
         <div className={styles.heroOverlay}>
           <h1>Velkommen til Ex.Phil eksamensøving</h1>
-          <p>Ikke gidd å stryk.</p>
+          <p>Ikke gidd å stryke</p>
         </div>
       </header>
 

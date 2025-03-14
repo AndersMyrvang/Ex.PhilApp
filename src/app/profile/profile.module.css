@@ -5,8 +5,9 @@
   width: 100%;
   max-width: 400px;
   margin: 2rem auto;
+  margin-bottom: 40vh;
   height: 21rem;
-  background-color: #ccc9d5;
+  background-color: #ffffff;
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
@@ -63,7 +64,7 @@
   padding: 0.75rem 1rem;
   border: none;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: lightgray;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }

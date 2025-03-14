@@ -63,7 +63,7 @@ export default function Home() {
         <h1 className={styles.title}>ExPhil App</h1>
         <h2 className={styles.subtitle}>Create an account</h2>
 
-        <form onSubmit={handleSignUpWithEmail} className={styles.form}>
+        {/* <form onSubmit={handleSignUpWithEmail} className={styles.form}>
           <div>
             <label htmlFor="displayName" className={styles.label}>
               Display Name
@@ -118,7 +118,7 @@ export default function Home() {
           <hr className={styles.hr} />
           <span className={styles.hrText}>or continue with</span>
           <hr className={styles.hr} />
-        </div>
+        </div> */}
 
         <button onClick={handleSignUpWithGoogle} className={styles.googleButton}>
           <svg className={styles.googleIcon} viewBox="0 0 533.5 544.3">

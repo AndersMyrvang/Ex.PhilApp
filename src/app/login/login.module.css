@@ -4,9 +4,17 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url("../../../public/bakgrunnLogin.png") center/cover no-repeat;
+  background: url("../../../public/hvitBakgrunnLogin.png") center/cover no-repeat;
   margin: 0;
   padding: 2%;
+}
+
+:global(body.dark-mode) .container {
+  /* Replace or overlay your dark background image */
+  background: url("../../../public/blaBakgrunnLogin.png") no-repeat center center;
+  background-size: cover;
+  /* Fallback solid background if the image fails to load: */
+  background-color: #102a43;
 }
 
 .overlay {
@@ -25,8 +33,20 @@
   width: 100%;
   max-width: 28rem;
   padding: 2rem;
-  background-color: rgba(200, 200, 200, 0.6);
-  color: white;
+  background-color: rgba(220, 220, 220, 1);
+  color: black;
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+:global(body.dark-mode) .card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 28rem;
+  padding: 2rem;
+  background-color: rgba(240, 240, 240, 0.9);
+  color: black;
   border-radius: 0.25rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
 }
@@ -103,7 +123,7 @@
 
 .hrText {
   font-size: 0.875rem;
-  color: white;
+  color: black;
 }
 
 .googleButton {
@@ -134,7 +154,7 @@
   margin-top: 1rem;
   font-size: 0.75rem;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 .terms a {
