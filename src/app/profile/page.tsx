@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import styles from "./profile.module.css";
 import { useRouter } from "next/navigation";
 import { subscribeToAuthState, signOutUser } from "@/utils/firebaseAuth";
@@ -38,9 +39,11 @@ export default function ProfilePage() {
     <div className={styles.profileContainer}>
       <div className={styles.profilePhotoContainer}>
         {user.photoURL ? (
-          <img
+          <Image
             src={user.photoURL}
             alt="Profile Photo"
+            width={150}
+            height={150}
             className={styles.profilePhoto}
           />
         ) : (

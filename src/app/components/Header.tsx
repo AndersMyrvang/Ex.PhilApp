@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 import styles from "./Header.module.css";
 import { subscribeToAuthState } from "@/utils/firebaseAuth";
 import { auth } from "@/firebase/config";
@@ -180,9 +181,11 @@ export default function Header() {
           {user ? (
             <Link href="/profile" className={styles.profilePhotoContainer}>
               {user.photoURL ? (
-                <img
+                <Image
                   src={user.photoURL}
                   alt="Profile"
+                  width={50}
+                  height={50}
                   className={styles.profilePhoto}
                 />
               ) : (

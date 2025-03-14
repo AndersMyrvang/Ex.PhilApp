@@ -37,10 +37,21 @@ function getExamTitle(pathname: string): string {
 }
 
 const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
+  // Call hooks at the top of the component so they're always executed.
+  const pathname = usePathname();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<(number | undefined)[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(null);
+
+  // Early render for no questions, now after calling the hook.
+  if (!examData.questions || examData.questions.length === 0) {
+    return (
+      <div className={styles.examContainer}>
+        No questions available for this exam.
+      </div>
+    );
+  }
 
   useEffect(() => {
     const loadTempSave = async () => {
@@ -116,15 +127,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     setCurrentQuestionIndex(index);
   };
 
-  if (!examData.questions || examData.questions.length === 0) {
-    return (
-      <div className={styles.examContainer}>
-        No questions available for this exam.
-      </div>
-    );
-  }
-
-  const pathname = usePathname();
   const currentQuestion = examData.questions[currentQuestionIndex];
   const selected = selectedAnswers[currentQuestionIndex];
   const pageTitle = getExamTitle(pathname);
