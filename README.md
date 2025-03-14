@@ -1,7 +1,7 @@
 # ExPhil Exam Project
 
 ## Description
-ExPhil Exam Project is a platform for taking exams to practice for Ex.Phil. It provides a user-friendly interface for students to prepare for their exams.
+ExPhil Exam Project is a platform for taking exams to practice for Ex.Phil. It provides a user-friendly interface for students to prepare for their exams
 
 ## Features
 - User authentication.
