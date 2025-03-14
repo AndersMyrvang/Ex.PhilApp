@@ -6,7 +6,6 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase/config";
 import styles from "../results.module.css";
 
-// Import the real Firestore exam fetcher
 import { fetchExamData } from "../../../utils/fetchExamData";
 
 interface Question {
@@ -26,7 +25,7 @@ interface ResultDetail {
     examId: string;
     correctCount: number;
     totalQuestions: number;
-    answers: number[]; // user submitted answers (padded with -1 for unanswered)
+    answers: number[];
     timestamp: string;
 }
 
@@ -39,7 +38,6 @@ const ResultDetailPage: React.FC = () => {
     useEffect(() => {
         const fetchResultDetail = async () => {
             try {
-                // 1. Fetch the result document from Firestore using the resultId
                 const docRef = doc(db, "results", params.resultId);
                 const docSnap = await getDoc(docRef);
                 if (!docSnap.exists()) {
@@ -48,7 +46,6 @@ const ResultDetailPage: React.FC = () => {
                     return;
                 }
 
-                // 2. Store the result data
                 const data = docSnap.data() as Omit<ResultDetail, "id">;
                 const newResult: ResultDetail = {
                     id: docSnap.id,
@@ -56,7 +53,6 @@ const ResultDetailPage: React.FC = () => {
                 };
                 setResult(newResult);
 
-                // 3. Fetch the exam data from Firestore (using your fetchExamData utility)
                 const fetchedExamData = await fetchExamData(newResult.examId);
                 setExamData(fetchedExamData);
             } catch (error) {
@@ -73,12 +69,10 @@ const ResultDetailPage: React.FC = () => {
         return <p className={styles.loading}>Laster detaljert resultat...</p>;
     }
 
-    // If no result or exam data found, show error
     if (!result || !examData) {
         return <p className={styles.error}>Kunne ikke finne resultatdetaljer.</p>;
     }
 
-    // Render the result details
     return (
         <div className={styles.backgroundExam}>
             <div className={styles.resultsIdContainer}>
@@ -92,7 +86,6 @@ const ResultDetailPage: React.FC = () => {
                 <h2 className={styles.subTitle}>Detaljer</h2>
                 <ul className={styles.resultsList}>
                     {examData.questions.map((q, index) => {
-                        // Normalize answer: if -1, then the user did not answer
                         const userAnswer = result.answers[index] === -1 ? null : result.answers[index];
                         const isCorrect = userAnswer === q.correctChoice;
                         return (
