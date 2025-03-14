@@ -2,12 +2,12 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 export interface Result {
-  id: string; // add id field
+  id: string;
   userId: string;
   examId: string;
   correctCount: number;
   totalQuestions: number;
-  answers: number[]; // make sure to store answers from the final submission
+  answers: number[];
   timestamp: string;
 }
 
@@ -16,7 +16,7 @@ export async function getUserResults(userId: string): Promise<Result[]> {
     const q = query(
       collection(db, "results"),
       where("userId", "==", userId),
-      where("temporary", "==", false) // show only final submissions
+      where("temporary", "==", false)
     );
     const snapshot = await getDocs(q);
     const results: Result[] = snapshot.docs.map((docSnap) => {
