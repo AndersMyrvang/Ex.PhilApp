@@ -4,10 +4,10 @@
 ExPhil Exam Project is a platform for taking exams to practice for Ex.Phil. It provides a user-friendly interface for students to prepare for their exams.
 
 ## Features
-- User authentication
-- Exam taking functionality
-- Firebase integration for data storage
-- Responsive design
+- User authentication.
+- Exam taking functionality.
+- Firebase integration for data storage.
+- Responsive design.
 
 ## Installation
 
