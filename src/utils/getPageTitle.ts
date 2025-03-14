@@ -3,7 +3,7 @@ export function getPageTitle(pathname: string): string {
       case "/":
         return "Home";
       case "/login":
-        return "login";
+        return "Login";
       case "/results":
         return "Resultater";
       case "/eksamen1":
@@ -14,6 +14,8 @@ export function getPageTitle(pathname: string): string {
         return "Eksamen 3";
       case "/eksamen4":
         return "Eksamen 4";
+        case "/eksamen5":
+        return "Eksamen 5";
       case "/profile":
         return "Min Profil";
       default:

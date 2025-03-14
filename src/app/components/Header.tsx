@@ -159,6 +159,11 @@ export default function Header() {
                     Eksamen 4
                   </Link>
                 </li>
+                <li>
+                  <Link href="/eksamen5" onClick={closeDropdown}>
+                    Eksamen 5
+                  </Link>
+                </li>
               </ul>
             )}
           </div>

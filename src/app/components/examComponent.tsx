@@ -29,6 +29,8 @@ function getExamTitle(pathname: string): string {
       return "Eksamen 3";
     case "/eksamen4":
       return "Eksamen 4";
+    case "/eksamen5":
+      return "Eksamen 5";
     default:
       return "Unknown Exam";
   }
