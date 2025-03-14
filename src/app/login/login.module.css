@@ -10,7 +10,7 @@
 }
 
 :global(body.dark-mode) .container {
-  background: url("../../../public/blaBakgrunnLogin.png") no-repeat center center;
+  background: url("../../../public/blaBakgrunnLogin.png") center/cover no-repeat;
   background-color: #102a43;
 }
 
