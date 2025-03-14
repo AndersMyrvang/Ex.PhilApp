@@ -5,6 +5,6 @@
 }
 
 :global(body.dark-mode) .footer {
-  background-color: #486581; /* Darkest shade */
+  background-color: #486581;
   border-bottom: 1px solid #829ab1;
 }

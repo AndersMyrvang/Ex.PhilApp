@@ -42,7 +42,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(null);
 
-  // On component mount, check for a temporary save and normalize padded answers (-1 -> undefined)
   useEffect(() => {
     const loadTempSave = async () => {
       const uid = userId ?? "anonymous";
@@ -58,14 +57,12 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     loadTempSave();
   }, [userId, examData.examId]);
 
-  // Helper to handle selecting an option
   const handleOptionClick = (questionIndex: number, optionIndex: number) => {
     const newAnswers = [...selectedAnswers];
     newAnswers[questionIndex] = optionIndex;
     setSelectedAnswers(newAnswers);
   };
 
-  // Calculate how many answers are correct
   const calculateScore = () => {
     let correctCount = 0;
     examData.questions.forEach((q, idx) => {
@@ -76,7 +73,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     return correctCount;
   };
 
-  // Submit the exam and store the result as a final attempt
   const handleSubmit = async () => {
     const correctCount = calculateScore();
     setScore(correctCount);
@@ -87,14 +83,11 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
       examData.examId,
       correctCount,
       examData.questions.length,
-      // For final submission, no need to pad answers if you prefer.
       selectedAnswers.map(ans => ans === undefined ? -1 : ans)
     );
   };
 
-  // Save temporary progress so the user can return later
   const handleTemporarySave = async () => {
-    // Pad answers with -1 for unanswered questions.
     const paddedAnswers = examData.questions.map((_, i) =>
       selectedAnswers[i] !== undefined ? selectedAnswers[i]! : -1
     );
@@ -107,21 +100,18 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
     window.location.href = "/";
   };
 
-  // Navigation: previous question
   const handlePrevQuestion = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex((prev) => prev - 1);
     }
   };
 
-  // Navigation: next question
   const handleNextQuestion = () => {
     if (currentQuestionIndex < examData.questions.length - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
     }
   };
 
-  // Navigation: jump to a specific question
   const handleQuestionNumberClick = (index: number) => {
     setCurrentQuestionIndex(index);
   };
@@ -136,7 +126,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
 
   const pathname = usePathname();
   const currentQuestion = examData.questions[currentQuestionIndex];
-  // Since we've normalized, selected will be undefined if not answered.
   const selected = selectedAnswers[currentQuestionIndex];
   const pageTitle = getExamTitle(pathname);
 
@@ -177,7 +166,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
           )}
         </div>
 
-        {/* Navigation Buttons */}
         <div className={styles.navContainer}>
           <button
             onClick={handlePrevQuestion}
@@ -196,7 +184,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
           </button>
         </div>
 
-        {/* Numbered question buttons */}
         <div className={styles.questionNumbers}>
           {examData.questions.map((_, index) => {
             const isAnswered =
@@ -217,7 +204,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
           })}
         </div>
 
-        {/* Submit button, Temporary Save button and Score display */}
         <div className={styles.buttonContainer}>
           {!submitted && (
             <>

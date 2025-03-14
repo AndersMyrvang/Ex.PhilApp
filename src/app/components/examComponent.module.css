@@ -1,7 +1,3 @@
-/* ============================= */
-/* Default (Light Mode) Styles   */
-/* ============================= */
-
 .backgroundExam {
   display: flex;
   flex-direction: column; 
@@ -87,7 +83,7 @@
   margin-top: 20px;
   font-size: 16px;
   color: white;
-  background-color: #28a745; /* New color */
+  background-color: #28a745; 
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -95,7 +91,7 @@
 }
 
 .tempSubmitButton:hover {
-  background-color: #1e7e34; /* New hover color */
+  background-color: #1e7e34;
 }
 
 .navContainer {
@@ -168,25 +164,21 @@
 */
 
 :global(body.dark-mode) .backgroundExam {
-  /* Replace or overlay your dark background image */
   background: url("/blaTenkLang.png") no-repeat center center;
   background-size: cover;
-  /* Fallback solid background if the image fails to load: */
   background-color: #102a43;
 }
 
 :global(body.dark-mode) .examContainer {
-  background-color: #486581; /* Dark container background */
-  color: #f0f4f8;           /* Light text */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Deeper shadow */
+  background-color: #486581; 
+  color: #f0f4f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
 }
 
-/* Make questions stand out a bit with a subtle border color */
 :global(body.dark-mode) .question {
   border-bottom: 1px solid #829ab1;
 }
 
-/* Options: slightly lighter background, but still dark theme */
 :global(body.dark-mode) .option {
   background-color: #829ab1;
   border-color: #bcccdc;
@@ -198,13 +190,11 @@
   color: #102a43;
 }
 
-/* Selected option: highlight it with a lighter background */
 :global(body.dark-mode) .selected {
   background-color: #bcccdc;
   color: #102a43;
 }
 
-/* Navigation buttons in dark mode */
 :global(body.dark-mode) .navButton {
   background-color: #102a43;
   color: #f0f4f8;
@@ -216,7 +206,6 @@
   color: #f0f4f8;
 }
 
-/* Question number buttons in dark mode */
 :global(body.dark-mode) .questionNumberButton {
   background-color: #102a43;
   border: 1px solid #829ab1;
@@ -228,7 +217,6 @@
   color: #f0f4f8;
 }
 
-/* Active question and answered question states in dark mode */
 :global(body.dark-mode) .activeQuestion {
   background-color: #f0f4f8; 
   color: #102a43; 

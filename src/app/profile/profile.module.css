@@ -1,6 +1,3 @@
-/* ============================= */
-/* Default (Light Mode) Styles   */
-/* ============================= */
 .profileContainer {
   width: 100%;
   max-width: 400px;
@@ -90,8 +87,8 @@
     - #102a43 (darkest)
 */
 :global(body.dark-mode) .profileContainer {
-  background-color: #486581; /* Use a mid-to-dark blue */
-  color: #f0f4f8; /* Light text for contrast */
+  background-color: #486581; 
+  color: #f0f4f8; 
 }
 
 :global(body.dark-mode) .profilePhotoPlaceholder {

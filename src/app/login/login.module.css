@@ -10,10 +10,7 @@
 }
 
 :global(body.dark-mode) .container {
-  /* Replace or overlay your dark background image */
   background: url("../../../public/blaBakgrunnLogin.png") no-repeat center center;
-  background-size: cover;
-  /* Fallback solid background if the image fails to load: */
   background-color: #102a43;
 }
 
