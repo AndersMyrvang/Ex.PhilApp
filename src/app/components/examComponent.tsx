@@ -37,14 +37,32 @@ function getExamTitle(pathname: string): string {
 }
 
 const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
-  // Call hooks at the top of the component so they're always executed.
+  // Unconditionally call hooks at the top
   const pathname = usePathname();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<(number | undefined)[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(null);
 
-  // Early render for no questions, now after calling the hook.
+  // Always run useEffect, and perform a check inside it
+  useEffect(() => {
+    if (examData.questions && examData.questions.length > 0) {
+      const loadTempSave = async () => {
+        const uid = userId ?? "anonymous";
+        const tempData = await fetchTempExamResult(uid, examData.examId);
+        if (tempData) {
+          const normalizedAnswers = tempData.answers.map((ans: number) =>
+            ans === -1 ? undefined : ans
+          );
+          setSelectedAnswers(normalizedAnswers);
+          setCurrentQuestionIndex(tempData.currentQuestionIndex);
+        }
+      };
+      loadTempSave();
+    }
+  }, [userId, examData.examId, examData.questions]);
+
+  // Now, conditionally render based on examData after all hooks have been called
   if (!examData.questions || examData.questions.length === 0) {
     return (
       <div className={styles.examContainer}>
@@ -52,21 +70,6 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
       </div>
     );
   }
-
-  useEffect(() => {
-    const loadTempSave = async () => {
-      const uid = userId ?? "anonymous";
-      const tempData = await fetchTempExamResult(uid, examData.examId);
-      if (tempData) {
-        const normalizedAnswers = tempData.answers.map((ans: number) =>
-          ans === -1 ? undefined : ans
-        );
-        setSelectedAnswers(normalizedAnswers);
-        setCurrentQuestionIndex(tempData.currentQuestionIndex);
-      }
-    };
-    loadTempSave();
-  }, [userId, examData.examId]);
 
   const handleOptionClick = (questionIndex: number, optionIndex: number) => {
     const newAnswers = [...selectedAnswers];
@@ -207,19 +210,16 @@ const ExamComponent: React.FC<ExamComponentProps> = ({ examData, userId }) => {
         </div>
 
         <div className={styles.buttonContainer}>
-          {!submitted && (
-            <>
-              <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <button onClick={handleTemporarySave} className={styles.tempSubmitButton}>
-                  Lagre midlertidig
-                </button>
-                <button onClick={handleSubmit} className={styles.submitButton}>
-                  Fullfør eksamen
-                </button>
-              </div>
-            </>
-          )}
-          {submitted && (
+          {!submitted ? (
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <button onClick={handleTemporarySave} className={styles.tempSubmitButton}>
+                Lagre midlertidig
+              </button>
+              <button onClick={handleSubmit} className={styles.submitButton}>
+                Fullfør eksamen
+              </button>
+            </div>
+          ) : (
             <div style={{ marginTop: "20px" }}>
               <p>
                 Du fikk {score} av {examData.questions.length} riktige.
