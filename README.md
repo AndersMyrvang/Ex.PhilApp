@@ -1,6 +1,6 @@
 # ExPhil Exam Project
 
-Link to check out the project: [ExPhil Exam Project](https://v0-ex-phil-3x.vercel.app/)
+Link to check out the project: [ExPhil Exam Project](https://exphilquiz.vercel.app/)
 
 ## Description
 ExPhil Exam Project is a platform for taking exams to practice for Ex.Phil. It provides a user-friendly interface for students to prepare for their exams
