@@ -37,3 +37,13 @@ next-env.d.ts
 
 # firebase admin sdk
 serviceAccountKey.json
+
+# exams and flashcards
+
+exam1.json
+exam2.json
+exam3.json
+exam4.json
+exam5.json
+exam6.json
+flashcards.json
