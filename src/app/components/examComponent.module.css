@@ -9,13 +9,15 @@
 }
 
 .examContainer {
-  padding: 20px;
+  padding: 2%;
   max-width: 800px;
   margin: 0 auto;
   background-color: lightgrey;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   flex: 1;
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .question {
@@ -166,7 +168,7 @@
 :global(body.dark-mode) .backgroundExam {
   background: url("/blaTenkLang.png") no-repeat center center;
   background-size: cover;
-  background-color: #102a43;
+  background-color: #102a43; 
 }
 
 :global(body.dark-mode) .examContainer {

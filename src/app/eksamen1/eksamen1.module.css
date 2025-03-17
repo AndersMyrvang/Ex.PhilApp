@@ -1,16 +1,16 @@
 .pageContainer {
-    padding: 20px;
-  }
-  
-  .loading {
-    font-size: 1.2em;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .error {
-    color: red;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
+  padding: 20px;
+  background-color: #829ab1;
+}
+
+.loading {
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 50px;
+}
