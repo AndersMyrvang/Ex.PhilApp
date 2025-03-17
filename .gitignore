@@ -47,3 +47,6 @@ exam4.json
 exam5.json
 exam6.json
 flashcards.json
+
+# firebase firestore
+src/firebase/firestore/

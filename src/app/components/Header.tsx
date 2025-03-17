@@ -122,6 +122,17 @@ export default function Header() {
       console.error("Feil ved innlogging:", error);
     }
   };
+  const routeFlashcards = async () => {
+    if (!user) {
+      alert("du må logge inn for å ta flashcards");
+      return;
+    }
+    try {
+      router.push("/flashcards");
+    } catch (error) {
+      console.error("Feil ved innlogging:", error);
+    }
+  };
 
   return (
     <header className={styles.header}>
@@ -134,6 +145,9 @@ export default function Header() {
         </div>
 
         <div className={styles.middle}>
+        <button onClick={routeFlashcards} className={styles.navButton}>
+            Flashcards
+          </button>
           <div className={styles.dropdown} ref={dropdownRef}>
             <button onClick={toggleDropdown} className={styles.navButton}>
               Eksamener
