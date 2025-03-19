@@ -16,10 +16,6 @@ const FlashcardsPage: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [loading, setLoading] = useState(true);
-
-  // For the text input that specifies which card to jump to
-  // We'll keep track of whatever the user types, but also sync
-  // it to the current card number on Next/Prev or initial load
   const [desiredCard, setDesiredCard] = useState("");
 
   useEffect(() => {
@@ -48,10 +44,32 @@ const FlashcardsPage: React.FC = () => {
     fetchFlashcards();
   }, []);
 
-  // Whenever currentIndex changes, update the input to match the (index + 1)
+  // Sync desiredCard input with the current card number (user-facing: 1-based)
   useEffect(() => {
     setDesiredCard(String(currentIndex + 1));
   }, [currentIndex]);
+
+  // Keyboard navigation: Space to flip, ArrowLeft for previous, ArrowRight for next
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // If an input is focused, skip keyboard shortcuts.
+      if ((e.target as HTMLElement).tagName === "INPUT") return;
+
+      if (e.code === "Space") {
+        e.preventDefault(); // Prevent page scroll
+        setFlipped((prev) => !prev);
+      } else if (e.code === "ArrowLeft") {
+        handlePrev();
+      } else if (e.code === "ArrowRight") {
+        handleNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [currentIndex, cards]);
 
   const handlePrev = () => {
     if (currentIndex > 0) {
@@ -67,13 +85,10 @@ const FlashcardsPage: React.FC = () => {
     }
   };
 
-  // Called when user presses "Enter" or clicks a "Go" button
   const handleJump = () => {
     const index = parseInt(desiredCard, 10);
     if (!isNaN(index)) {
-      // We store pages from 1..N in user-facing, but internally it's 0..N-1
       const newIndex = index - 1;
-      // Validate range
       if (newIndex >= 0 && newIndex < cards.length) {
         setFlipped(false);
         setCurrentIndex(newIndex);
@@ -85,7 +100,6 @@ const FlashcardsPage: React.FC = () => {
     }
   };
 
-  // Early return if still loading or no cards
   if (loading) {
     return <p className={styles.loading}>Loading flashcards...</p>;
   }
@@ -140,7 +154,7 @@ const FlashcardsPage: React.FC = () => {
           </button>
         </div>
 
-        {/* The actual flashcard */}
+        {/* Flashcard display */}
         <div className={styles.flashcardWrapper}>
           <div
             className={`${styles.card} ${flipped ? styles.flipped : ""}`}
