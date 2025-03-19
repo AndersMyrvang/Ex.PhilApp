@@ -17,12 +17,15 @@ const FlashcardsPage: React.FC = () => {
   const [flipped, setFlipped] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // Fetch cards from Firestore on mount
+  // For the text input that specifies which card to jump to
+  // We'll keep track of whatever the user types, but also sync
+  // it to the current card number on Next/Prev or initial load
+  const [desiredCard, setDesiredCard] = useState("");
+
   useEffect(() => {
     const fetchFlashcards = async () => {
       try {
         const snapshot = await getDocs(collection(db, "flashcards"));
-        // Map docs to your local structure
         const fetchedCards: Card[] = snapshot.docs.map((doc) => {
           const data = doc.data() as {
             term?: string;
@@ -45,6 +48,11 @@ const FlashcardsPage: React.FC = () => {
     fetchFlashcards();
   }, []);
 
+  // Whenever currentIndex changes, update the input to match the (index + 1)
+  useEffect(() => {
+    setDesiredCard(String(currentIndex + 1));
+  }, [currentIndex]);
+
   const handlePrev = () => {
     if (currentIndex > 0) {
       setFlipped(false);
@@ -59,9 +67,22 @@ const FlashcardsPage: React.FC = () => {
     }
   };
 
-  const goToCard = (index: number) => {
-    setFlipped(false);
-    setCurrentIndex(index);
+  // Called when user presses "Enter" or clicks a "Go" button
+  const handleJump = () => {
+    const index = parseInt(desiredCard, 10);
+    if (!isNaN(index)) {
+      // We store pages from 1..N in user-facing, but internally it's 0..N-1
+      const newIndex = index - 1;
+      // Validate range
+      if (newIndex >= 0 && newIndex < cards.length) {
+        setFlipped(false);
+        setCurrentIndex(newIndex);
+      } else {
+        alert(`Please enter a number between 1 and ${cards.length}`);
+      }
+    } else {
+      alert("Please enter a valid number");
+    }
   };
 
   // Early return if still loading or no cards
@@ -80,6 +101,7 @@ const FlashcardsPage: React.FC = () => {
       <div className={styles.cardsContainer}>
         <h1 className={styles.title}>Flashcards</h1>
 
+        {/* Navigation area */}
         <div className={styles.cardNav}>
           <button
             onClick={handlePrev}
@@ -88,21 +110,27 @@ const FlashcardsPage: React.FC = () => {
           >
             &lt; Prev
           </button>
-          <div className={styles.pageNumbers}>
-            {cards.map((_, index) => (
-              <div
-                key={index}
-                className={
-                  index === currentIndex
-                    ? `${styles.pageNumber} ${styles.activePage}`
-                    : styles.pageNumber
+
+          <div className={styles.goToContainer}>
+            <input
+              type="number"
+              min={1}
+              max={cards.length}
+              value={desiredCard}
+              onChange={(e) => setDesiredCard(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleJump();
                 }
-                onClick={() => goToCard(index)}
-              >
-                {index + 1}
-              </div>
-            ))}
+              }}
+              className={styles.inputNumber}
+            />
+            <span className={styles.separator}> / {cards.length}</span>
+            <button onClick={handleJump} className={styles.goButton}>
+              Go
+            </button>
           </div>
+
           <button
             onClick={handleNext}
             disabled={currentIndex === cards.length - 1}
@@ -112,6 +140,7 @@ const FlashcardsPage: React.FC = () => {
           </button>
         </div>
 
+        {/* The actual flashcard */}
         <div className={styles.flashcardWrapper}>
           <div
             className={`${styles.card} ${flipped ? styles.flipped : ""}`}

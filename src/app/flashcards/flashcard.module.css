@@ -4,195 +4,273 @@
   ---------------
 */
 .backgroundFlashcards {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    padding: 1rem;
-    background: url("../../../public/tenkLang.png") no-repeat center center;
-    background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+  background: url("../../../public/tenkLang.png") no-repeat center center;
+  background-size: cover;
+}
+
+.cardsContainer {
+  padding: 0.3rem;
+  width: 60%;
+  margin: 0 auto;
+  background-color: lightgrey;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  flex: 1;
+  text-align: center;
+}
+
+/* 
+  ---------------
+  Title
+  ---------------
+*/
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #000;
+}
+
+/* 
+  ---------------
+  Navigation
+  ---------------
+*/
+.cardNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.navButton {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* (Old pageNumbers / pageNumber classes can be removed or kept if you want them)
+.pageNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.pageNumber {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pageNumber:hover {
+  background-color: #ddd;
+}
+
+.activePage {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+*/
+
+/* 
+  ---------------
+  Go-To-Card Input
+  ---------------
+*/
+.goToContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 1rem;
+  font-size: large;
   }
-  
-  .cardsContainer {
-    padding: 0.3rem;
-    width: 60%;
-    margin: 0 auto;
-    background-color: lightgrey;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    flex: 1;
-    text-align: center;
-  }
-  
-  /* 
-    ---------------
-    Title
-    ---------------
-  */
-  .title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #000;
-  }
-  
-  /* 
-    ---------------
-    Navigation
-    ---------------
-  */
-  .cardNav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-  }
-  
-  .navButton {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    color: #000;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .navButton:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  .pageNumbers {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    justify-content: center;
-    flex: 1;
-    margin: 0 10px;
-  }
-  
-  .pageNumber {
-    background-color: #eee;
-    border: 1px solid #ccc;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .pageNumber:hover {
-    background-color: #ddd;
-  }
-  
-  .activePage {
-    background-color: #007bff; /* or your preferred highlight color */
-    color: #fff;
-    border-color: #007bff;
-  }
-  
-  /* 
-    ---------------
-    Card Flip
-    ---------------
-  */
-  .flashcardWrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-  }
-  
-  /* 
-    Make the card bigger 
-    so it's easier to read 
-  */
-  .card {
-    width: 400px;
-    height: 250px;
-    position: relative;
-    cursor: pointer;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-  }
-  
-  /* Flip the card when flipped class is added */
-  .flipped {
-    transform: rotateY(180deg);
-  }
-  
-  .front,
-  .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    background-color: #fff;
-    border: 1px solid #000;
-    border-radius: 8px;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  /* The back side is rotated 180 degrees so it's hidden by default */
-  .back {
-    transform: rotateY(180deg);
-  }
-  
-  /* 
-    ---------------
-    Dark Mode Overrides
-    ---------------
-  */
-  :global(body.dark-mode) .backgroundFlashcards {
-    background: url("../../../public/blaTenkLang.png") no-repeat center center;
-    background-size: cover;
-    background-color: #102a43;
-    color: #f0f4f8;
-  }
-  
-  :global(body.dark-mode) .cardsContainer {
-    background-color: #486581;
-    color: #f0f4f8;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-  
-  :global(body.dark-mode) .navButton {
-    background-color: #829ab1;
-    border: 1px solid #bcccdc;
-    color: #f0f4f8;
-  }
-  
-  :global(body.dark-mode) .navButton:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  :global(body.dark-mode) .pageNumber {
-    background-color: #829ab1;
-    border: 1px solid #bcccdc;
-    color: #f0f4f8;
-  }
-  
-  :global(body.dark-mode) .pageNumber:hover {
-    background-color: #bcccdc;
-    color: #102a43;
-  }
-  
-  :global(body.dark-mode) .activePage {
-    background-color: #f0f4f8;
-    color: #102a43;
-    border-color: #f0f4f8;
-  }
-  
-  :global(body.dark-mode) .front,
-  :global(body.dark-mode) .back {
-    background-color: #829ab1;
-    border: 1px solid #bcccdc;
-    color: #f0f4f8;
-  }
-  
+
+.inputNumber {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: large;
+}
+
+.separator {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.goButton {
+  width: 60px;
+  height: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+}
+
+.goButton:hover {
+  background-color: #eee;
+}
+
+/* Remove arrows from number inputs across all browsers */
+.inputNumber::-webkit-inner-spin-button,
+.inputNumber::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove arrows from number inputs in Firefox */
+.inputNumber {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  margin: 0; /* For consistency across browsers */
+}
+
+
+
+/* 
+  ---------------
+  Card Flip
+  ---------------
+*/
+.flashcardWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Make the card bigger so it's easier to read */
+.card {
+  width: 600px;
+  height: 350px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  font-size: x-large;
+}
+
+/* Flip the card when flipped class is added */
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The back side is rotated 180 degrees so it's hidden by default */
+.back {
+  transform: rotateY(180deg);
+}
+
+/* 
+  ---------------
+  Dark Mode Overrides
+  ---------------
+*/
+:global(body.dark-mode) .backgroundFlashcards {
+  background: url("../../../public/blaTenkLang.png") no-repeat center center;
+  background-size: cover;
+  background-color: #102a43;
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .cardsContainer {
+  background-color: #486581;
+  color: #f0f4f8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+:global(body.dark-mode) .navButton {
+  background-color: #829ab1;
+  border: 1px solid #bcccdc;
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Input / Button in Dark Mode */
+:global(body.dark-mode) .inputNumber {
+  background-color: #829ab1;
+  border: 1px solid #bcccdc;
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .goButton {
+  background-color: #829ab1;
+  border: 1px solid #bcccdc;
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .goButton:hover {
+  background-color: #bcccdc;
+  color: #102a43;
+}
+
+/* The old pageNumber and activePage classes if you keep them:
+:global(body.dark-mode) .pageNumber {
+  background-color: #829ab1;
+  border: 1px solid #bcccdc;
+  color: #f0f4f8;
+}
+
+:global(body.dark-mode) .pageNumber:hover {
+  background-color: #bcccdc;
+  color: #102a43;
+}
+
+:global(body.dark-mode) .activePage {
+  background-color: #f0f4f8;
+  color: #102a43;
+  border-color: #f0f4f8;
+}
+*/
+
+:global(body.dark-mode) .front,
+:global(body.dark-mode) .back {
+  background-color: #829ab1;
+  border: 1px solid #bcccdc;
+  color: #f0f4f8;
+}
