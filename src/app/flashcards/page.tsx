@@ -168,15 +168,16 @@ const FlashcardsPage: React.FC = () => {
 
         {/* Flashcard visning med flippe-effekt */}
         <div className={styles.flashcardWrapper}>
-          <div
-            className={`${styles.card} ${flipped ? styles.flipped : ""}`}
-            onClick={() => setFlipped(!flipped)}
-          >
+          <div className={`${styles.card} ${flipped ? styles.flipped : ""}`} onClick={() => setFlipped(!flipped)}>
             <div className={styles.front}>
-              <p>{currentCard.question}</p>
+              <div className={styles.cardContent}>
+                <p>{currentCard.question}</p>
+              </div>
             </div>
             <div className={styles.back}>
-              <p>{currentCard.answer}</p>
+              <div className={styles.cardContent}>
+                <p>{currentCard.answer}</p>
+              </div>
             </div>
           </div>
         </div>
