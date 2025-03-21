@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase/config"; // path to your config
+import { db } from "../../firebase/config";
 import styles from "./flashcard.module.css";
 
 interface Card {
@@ -11,13 +11,16 @@ interface Card {
   answer: string;
 }
 
+// Hovedkomponent for Flashcards-siden
 const FlashcardsPage: React.FC = () => {
+  // Definerer tilstander for kort, indeks, om kortet er flippet, lastestatus og ønsket kortnummer
   const [cards, setCards] = useState<Card[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [loading, setLoading] = useState(true);
   const [desiredCard, setDesiredCard] = useState("");
 
+  // Effekt for å hente flashcards fra databasen
   useEffect(() => {
     const fetchFlashcards = async () => {
       try {
@@ -44,19 +47,19 @@ const FlashcardsPage: React.FC = () => {
     fetchFlashcards();
   }, []);
 
-  // Sync desiredCard input with the current card number (user-facing: 1-based)
+  // Effekt for å oppdatere ønsket kortnummer basert på den nåværende indeksen
   useEffect(() => {
     setDesiredCard(String(currentIndex + 1));
   }, [currentIndex]);
 
-  // Keyboard navigation: Space to flip, ArrowLeft for previous, ArrowRight for next
+  // Effekt for å legge til tastatur-hendelser for navigasjon og flippe kort
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // If an input is focused, skip keyboard shortcuts.
+      // Ignorerer tastaturhendelser for input-felt
       if ((e.target as HTMLElement).tagName === "INPUT") return;
 
       if (e.code === "Space") {
-        e.preventDefault(); // Prevent page scroll
+        e.preventDefault();
         setFlipped((prev) => !prev);
       } else if (e.code === "ArrowLeft") {
         handlePrev();
@@ -71,6 +74,7 @@ const FlashcardsPage: React.FC = () => {
     };
   }, [currentIndex, cards]);
 
+  // Funksjon for å vise forrige kort
   const handlePrev = () => {
     if (currentIndex > 0) {
       setFlipped(false);
@@ -78,6 +82,7 @@ const FlashcardsPage: React.FC = () => {
     }
   };
 
+  // Funksjon for å vise neste kort
   const handleNext = () => {
     if (currentIndex < cards.length - 1) {
       setFlipped(false);
@@ -85,6 +90,7 @@ const FlashcardsPage: React.FC = () => {
     }
   };
 
+  // Funksjon for å hoppe til et spesifikt kort basert på brukerinput
   const handleJump = () => {
     const index = parseInt(desiredCard, 10);
     if (!isNaN(index)) {
@@ -100,23 +106,27 @@ const FlashcardsPage: React.FC = () => {
     }
   };
 
+  // Viser lastemelding mens data hentes
   if (loading) {
     return <p className={styles.loading}>Loading flashcards...</p>;
   }
 
+  // Viser melding hvis ingen flashcards er funnet
   if (cards.length === 0) {
     return <p className={styles.noCards}>No flashcards found.</p>;
   }
 
+  // Henter det nåværende kortet basert på indeksen
   const currentCard = cards[currentIndex];
 
+  // Renderer flashcard-UI, inkludert navigasjonsknapper og flippefunksjonalitet
   return (
     <div className={styles.backgroundFlashcards}>
       <div className={styles.cardsContainer}>
         <h1 className={styles.title}>Flashcards</h1>
 
-        {/* Navigation area */}
         <div className={styles.cardNav}>
+          {/* Knapp for å gå til forrige kort */}
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
@@ -125,6 +135,7 @@ const FlashcardsPage: React.FC = () => {
             &lt; Prev
           </button>
 
+          {/* Inndata for å hoppe til et spesifikt kort */}
           <div className={styles.goToContainer}>
             <input
               type="number"
@@ -145,6 +156,7 @@ const FlashcardsPage: React.FC = () => {
             </button>
           </div>
 
+          {/* Knapp for å gå til neste kort */}
           <button
             onClick={handleNext}
             disabled={currentIndex === cards.length - 1}
@@ -154,7 +166,7 @@ const FlashcardsPage: React.FC = () => {
           </button>
         </div>
 
-        {/* Flashcard display */}
+        {/* Flashcard visning med flippe-effekt */}
         <div className={styles.flashcardWrapper}>
           <div
             className={`${styles.card} ${flipped ? styles.flipped : ""}`}
