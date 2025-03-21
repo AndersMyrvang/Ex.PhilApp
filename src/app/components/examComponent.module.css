@@ -1,3 +1,6 @@
+/* ============================= */
+/* Base Styles for Exam Component */
+/* ============================= */
 .backgroundExam {
   display: flex;
   flex-direction: column; 
@@ -11,13 +14,11 @@
 .examContainer {
   padding: 2%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 1% auto;
   background-color: lightgrey;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   flex: 1;
-  margin-top: 1%;
-  margin-bottom: 1%;
 }
 
 .question {
@@ -156,15 +157,6 @@
 /* ============================= */
 /* Dark Mode Overrides           */
 /* ============================= */
-/* 
-  Using the palette:
-    - #f0f4f8 (lightest)
-    - #bcccdc
-    - #829ab1
-    - #486581
-    - #102a43 (darkest)
-*/
-
 :global(body.dark-mode) .backgroundExam {
   background: url("/blaTenkLang.png") no-repeat center center;
   background-size: cover;
@@ -229,4 +221,110 @@
   background-color: #bcccdc;
   color: #102a43;
   border-color: #829ab1;
+}
+
+/* ================================ */
+/* RESPONSIVE STYLES               */
+/* ================================ */
+
+/* For phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .examContainer {
+    max-width: 95%;
+    padding: 1rem;
+    margin: 1% auto;
+  }
+  
+  .question {
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+  }
+  
+  .questionText {
+    font-size: 0.9rem;
+  }
+  
+  .option {
+    padding: 8px;
+    margin: 4px 0;
+    font-size: 0.9rem;
+  }
+  
+  .navContainer {
+    margin: 15px 0;
+  }
+  
+  .navButton {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+  
+  .questionNumbers {
+    gap: 3px;
+    margin-bottom: 15px;
+  }
+  
+  .questionNumberButton {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+  
+  .submitButton,
+  .tempSubmitButton {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    margin-top: 15px;
+  }
+}
+
+/* For tablets (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .examContainer {
+    max-width: 85%;
+    padding: 1.5rem;
+    margin: 1.5% auto;
+  }
+  
+  .question {
+    margin-bottom: 18px;
+    padding-bottom: 9px;
+  }
+  
+  .questionText {
+    font-size: 1rem;
+  }
+  
+  .option {
+    padding: 9px;
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  
+  .navContainer {
+    margin: 18px 0;
+  }
+  
+  .navButton {
+    padding: 7px 11px;
+    font-size: 0.95rem;
+  }
+  
+  .questionNumbers {
+    gap: 4px;
+    margin-bottom: 18px;
+  }
+  
+  .questionNumberButton {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+  
+  .submitButton,
+  .tempSubmitButton {
+    padding: 9px 18px;
+    font-size: 1rem;
+    margin-top: 18px;
+  }
 }
