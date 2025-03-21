@@ -36,6 +36,7 @@ export default function ProfilePage() {
   }
 
   return (
+    <div className={styles.profilePage}>
     <div className={styles.profileContainer}>
       <div className={styles.profilePhotoContainer}>
         {user.photoURL ? (
@@ -64,6 +65,7 @@ export default function ProfilePage() {
           Log out
         </button>
       </div>
+    </div>
     </div>
   );
 }

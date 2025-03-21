@@ -78,14 +78,6 @@
 /* ============================= */
 /* Dark Mode Overrides           */
 /* ============================= */
-/*
-  Using the palette:
-    - #f0f4f8 (lightest)
-    - #bcccdc
-    - #829ab1
-    - #486581
-    - #102a43 (darkest)
-*/
 :global(body.dark-mode) .profileContainer {
   background-color: #486581; 
   color: #f0f4f8; 
@@ -118,4 +110,81 @@
 
 :global(body.dark-mode) .notLoggedIn {
   color: #f0f4f8;
+}
+
+/* ============================= */
+/* RESPONSIVE STYLES             */
+/* ============================= */
+
+/* For phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .profileContainer {
+    max-width: 90%;
+    margin: 1rem auto;
+    margin-bottom: 2rem; /* remove 40vh margin to avoid large blank space */
+    height: auto;        /* let the container grow with content */
+    padding: 1.5rem;
+  }
+
+  .profilePhotoContainer {
+    padding: 1rem;
+  }
+
+  .profilePhoto,
+  .profilePhotoPlaceholder {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profileName {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+
+  .emailContainer {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  .profilePage {
+    min-height: 69vh;
+   }
+
+  .actionButton {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* For tablets (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .profileContainer {
+    max-width: 70%;
+    margin: 2rem auto;
+    margin-bottom: 3rem;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .profilePhoto,
+  .profilePhotoPlaceholder {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profileName {
+    font-size: 1.3rem;
+  }
+
+  .profilePage {
+   min-height: 100vh;
+  }
+
+  .emailContainer {
+    font-size: 0.95rem;
+  }
+
+  .actionButton {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+  }
 }

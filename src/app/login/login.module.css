@@ -28,7 +28,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 28rem;
+  max-width: 28rem; /* ~448px on desktop */
   padding: 2rem;
   background-color: rgba(220, 220, 220, 1);
   color: black;
@@ -37,15 +37,8 @@
 }
 
 :global(body.dark-mode) .card {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 28rem;
-  padding: 2rem;
   background-color: rgba(240, 240, 240, 0.9);
   color: black;
-  border-radius: 0.25rem;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
 }
 
 .title {
@@ -161,4 +154,77 @@
 
 .terms a:hover {
   color: #2563eb;
+}
+
+/* ================================== */
+/* Dark Mode Overrides (already exist) */
+/* ================================== */
+/* ...existing dark-mode rules remain... */
+
+/* ================================ */
+/* RESPONSIVE STYLES FOR PHONES/TABLETS */
+/* ================================ */
+
+/* For phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem; 
+    background-size: cover; /* ensure image scales */
+  }
+  
+  .card {
+    max-width: none; /* remove fixed 28rem limit */
+    width: 90%;      /* a bit narrower on small screens */
+    margin: 0 auto;
+    padding: 1.5rem; 
+  }
+
+  .title {
+    font-size: 1.3rem; /* reduce font size */
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .input,
+  .button,
+  .googleButton {
+    font-size: 0.9rem; /* smaller text */
+  }
+
+  .terms {
+    font-size: 0.7rem;
+  }
+}
+
+/* For tablets (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 2rem;
+    background-size: cover;
+  }
+
+  .card {
+    max-width: 25rem; /* narrower than desktop but not as small as phone */
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .input,
+  .button,
+  .googleButton {
+    font-size: 0.95rem;
+  }
+
+  .terms {
+    font-size: 0.75rem;
+  }
 }

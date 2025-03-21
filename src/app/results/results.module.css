@@ -35,7 +35,7 @@
     color: #000;
 }
 
-.subTitle{
+.subTitle {
     margin: 1rem;
 }
 
@@ -88,19 +88,11 @@
     margin-left: 10px;
     font-weight: bold;
     color: blue;
-  }
+}
 
 /* ============================= */
 /* Dark Mode Overrides           */
 /* ============================= */
-/*
-  Using the palette:
-    - #f0f4f8 (lightest)
-    - #bcccdc
-    - #829ab1
-    - #486581
-    - #102a43 (darkest)
-*/
 :global(body.dark-mode) .backgroundExam {
     background: url("../../../public/blaTenkLang.png") no-repeat center center;
     background-size: cover;
@@ -155,4 +147,76 @@
 
 :global(body.dark-mode) .correctAnswer {
     color: yellow;
+}
+
+/* ================================ */
+/* RESPONSIVE STYLES               */
+/* ================================ */
+
+/* For phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .resultsContainer {
+    width: 90%;
+    padding: 0.5rem;
   }
+  
+  .resultsIdContainer {
+    width: 90%;
+    padding: 0.5rem;
+  }
+  
+  .title {
+    font-size: 1.4rem;
+  }
+  
+  .loading,
+  .noResults {
+    font-size: 1rem;
+  }
+  
+  .resultItem,
+  .resultIdItem {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .subTitle {
+    margin: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+/* For tablets (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .resultsContainer {
+    width: 70%;
+    padding: 0.75rem;
+  }
+  
+  .resultsIdContainer {
+    width: 80%;
+    padding: 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .loading,
+  .noResults {
+    font-size: 1.1rem;
+  }
+  
+  .resultItem,
+  .resultIdItem {
+    padding: 10px 14px;
+    font-size: 1rem;
+    margin-bottom: 0.9rem;
+  }
+  
+  .subTitle {
+    margin: 0.9rem;
+    font-size: 1.05rem;
+  }
+}

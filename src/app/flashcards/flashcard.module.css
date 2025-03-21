@@ -62,39 +62,6 @@
   cursor: not-allowed;
 }
 
-/* (Old pageNumbers / pageNumber classes can be removed or kept if you want them)
-.pageNumbers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-  justify-content: center;
-  flex: 1;
-  margin: 0 10px;
-}
-
-.pageNumber {
-  background-color: #eee;
-  border: 1px solid #ccc;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.pageNumber:hover {
-  background-color: #ddd;
-}
-
-.activePage {
-  background-color: #007bff;
-  color: #fff;
-  border-color: #007bff;
-}
-*/
-
 /* 
   ---------------
   Go-To-Card Input
@@ -106,7 +73,7 @@
   gap: 0.5rem;
   margin: 0 1rem;
   font-size: large;
-  }
+}
 
 .inputNumber {
   width: 50px;
@@ -144,15 +111,11 @@
   -webkit-appearance: none;
   margin: 0;
 }
-
-/* Remove arrows from number inputs in Firefox */
 .inputNumber {
   -moz-appearance: textfield;
   appearance: textfield;
-  margin: 0; /* For consistency across browsers */
+  margin: 0;
 }
-
-
 
 /* 
   ---------------
@@ -165,7 +128,6 @@
   margin-top: 2rem;
 }
 
-/* Make the card bigger so it's easier to read */
 .card {
   width: 600px;
   height: 350px;
@@ -176,7 +138,6 @@
   font-size: x-large;
 }
 
-/* Flip the card when flipped class is added */
 .flipped {
   transform: rotateY(180deg);
 }
@@ -231,7 +192,6 @@
   cursor: not-allowed;
 }
 
-/* Input / Button in Dark Mode */
 :global(body.dark-mode) .inputNumber {
   background-color: #829ab1;
   border: 1px solid #bcccdc;
@@ -249,28 +209,56 @@
   color: #102a43;
 }
 
-/* The old pageNumber and activePage classes if you keep them:
-:global(body.dark-mode) .pageNumber {
-  background-color: #829ab1;
-  border: 1px solid #bcccdc;
-  color: #f0f4f8;
-}
-
-:global(body.dark-mode) .pageNumber:hover {
-  background-color: #bcccdc;
-  color: #102a43;
-}
-
-:global(body.dark-mode) .activePage {
-  background-color: #f0f4f8;
-  color: #102a43;
-  border-color: #f0f4f8;
-}
-*/
-
 :global(body.dark-mode) .front,
 :global(body.dark-mode) .back {
   background-color: #829ab1;
   border: 1px solid #bcccdc;
   color: #f0f4f8;
 }
+
+/* 
+  ---------------
+  Responsive Styles
+  ---------------
+*/
+
+/* For phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .cardsContainer {
+    width: 90%;
+    padding: 0.5rem;
+  }
+  
+  .card {
+    width: 90%;
+    height: auto;
+    aspect-ratio: 16/9;
+    /* Override the x-large font size */
+    font-size: 1rem;  
+  }
+
+  /* Adjust line-height if needed so text doesn't look too cramped */
+  .front, .back {
+    line-height: 1.4;
+  }
+}
+
+/* For tablets (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cardsContainer {
+    width: 80%;
+    padding: 0.5rem;
+  }
+  
+  .card {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 16/9;
+    font-size: 1.1rem;  /* Slightly larger than phone, but smaller than desktop */
+  }
+
+  .front, .back {
+    line-height: 1.4;
+  }
+}
+
