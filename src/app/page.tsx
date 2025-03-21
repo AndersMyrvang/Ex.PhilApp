@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from 'next/navigation'
 import styles from "./home.module.css";
 import { subscribeToAuthState } from "@/utils/firebaseAuth";
+import CookieConsent from "./cookieConsent";
 
 export default function HomePage() {
   const [user, setUser] = useState<any>(null);
@@ -110,6 +111,8 @@ export default function HomePage() {
         )}
 
       </section>
+
+      <CookieConsent />
     </div>
   );
 }

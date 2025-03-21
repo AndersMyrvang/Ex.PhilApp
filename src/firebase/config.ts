@@ -1,8 +1,8 @@
+// src/firebase/config.ts
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
-import { getAnalytics, isSupported as isAnalyticsSupported } from 'firebase/analytics';
 import { getFunctions } from 'firebase/functions';
 import { getPerformance } from 'firebase/performance';
 
@@ -20,19 +20,27 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const storage = getStorage(app);
-let analytics;
-let performance;
+const functions = getFunctions(app);
+let analytics = null;
+let performance = null;
 
 if (typeof window !== 'undefined') {
-  isAnalyticsSupported().then((supported) => {
-    if (supported) {
-      analytics = getAnalytics(app);
-    }
-  });
-
   performance = getPerformance(app);
 }
 
-const functions = getFunctions(app);
+export { app, auth, db, storage, analytics, functions, performance };
 
-export { auth, db, storage, analytics, functions, performance };
+/**
+ * Dynamisk lasting av Firebase Analytics – kalles kun etter at brukeren har akseptert cookies.
+ */
+export async function loadAnalytics() {
+  if (typeof window !== 'undefined') {
+    const { getAnalytics, isSupported } = await import('firebase/analytics');
+    const supported = await isSupported();
+    if (supported) {
+      analytics = getAnalytics(app);
+      return analytics;
+    }
+  }
+  return null;
+}
