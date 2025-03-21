@@ -1,10 +1,63 @@
 .footer {
   background-color: #f6f8fa;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
+  border-top: 1px solid #d0d7de;
   border-bottom: 1px solid #d0d7de;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
+.footer p {
+  margin: 0.5rem 0;
+}
+
+.footer nav {
+  margin: 0.5rem 0;
+}
+
+.footer nav a {
+  color: #0366d6;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer nav a:hover {
+  text-decoration: underline;
+  color: #024b9a;
+}
+
+.socialMedia {
+  margin-top: 0.5rem;
+}
+
+.socialMedia a {
+  color: #0366d6;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.socialMedia a:hover {
+  color: #024b9a;
+}
+
+/* Dark mode overrides */
 :global(body.dark-mode) .footer {
   background-color: #486581;
+  border-top: 1px solid #829ab1;
   border-bottom: 1px solid #829ab1;
+  color: #ffffff;
+}
+
+:global(body.dark-mode) .footer nav a,
+:global(body.dark-mode) .socialMedia a {
+  color: #c9d1d9;
+}
+
+:global(body.dark-mode) .footer nav a:hover,
+:global(body.dark-mode) .socialMedia a:hover {
+  color: #a0aab8;
 }

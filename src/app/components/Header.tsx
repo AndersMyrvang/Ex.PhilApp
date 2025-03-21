@@ -16,18 +16,26 @@ import { getPageTitle } from "@/utils/getPageTitle";
 library.add(fas);
 
 function DarkModeButton() {
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem("darkMode");
-    return savedMode === "true";
-  });
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Only run this effect on the client side
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedMode = localStorage.getItem("darkMode");
+      setDarkMode(savedMode === "true");
+    }
+  }, []);
 
   const toggleDarkMode = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-    document.body.classList.toggle("dark-mode", newMode);
-    localStorage.setItem("darkMode", newMode.toString());
-  };
 
+    if (typeof window !== "undefined") {
+      document.body.classList.toggle("dark-mode", newMode);
+      localStorage.setItem("darkMode", newMode.toString());
+    }
+  };
+  
   useEffect(() => {
     if (darkMode) {
       document.body.classList.add("dark-mode");
@@ -50,6 +58,7 @@ function DarkModeButton() {
     </button>
   );
 }
+
 
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
