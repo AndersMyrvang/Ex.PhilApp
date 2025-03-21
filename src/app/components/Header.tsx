@@ -6,7 +6,6 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import styles from "./Header.module.css";
 import { subscribeToAuthState } from "@/utils/firebaseAuth";
-import { auth } from "@/firebase/config";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +17,6 @@ library.add(fas);
 function DarkModeButton() {
   const [darkMode, setDarkMode] = useState(false);
 
-  // Only run this effect on the client side
   useEffect(() => {
     if (typeof window !== "undefined") {
       const savedMode = localStorage.getItem("darkMode");
@@ -59,13 +57,17 @@ function DarkModeButton() {
   );
 }
 
-
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [user, setUser] = useState<any>(null);
+
   const router = useRouter();
   const pathname = usePathname();
+
+  // Refs for both desktop and mobile dropdowns
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const mobileDropdownRef = useRef<HTMLDivElement>(null);
 
   const pageTitle = getPageTitle(pathname);
 
@@ -81,13 +83,20 @@ export default function Header() {
     setIsDropdownOpen(false);
   };
 
+  // Close both dropdowns if click is outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      const clickTarget = event.target as Node;
+
+      // If click is NOT inside desktop dropdown AND NOT inside mobile dropdown
       if (
         dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
+        !dropdownRef.current.contains(clickTarget) &&
+        mobileDropdownRef.current &&
+        !mobileDropdownRef.current.contains(clickTarget)
       ) {
         closeDropdown();
+        setIsMobileMenuOpen(false);
       }
     };
 
@@ -131,6 +140,7 @@ export default function Header() {
       console.error("Feil ved innlogging:", error);
     }
   };
+
   const routeFlashcards = async () => {
     if (!user) {
       alert("du må logge inn for å ta flashcards");
@@ -143,9 +153,14 @@ export default function Header() {
     }
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
+        {/* Left section */}
         <div className={styles.left}>
           <button onClick={routeHome} className={styles.navButton}>
             <i className="bi bi-house"></i>
@@ -153,8 +168,9 @@ export default function Header() {
           <span className={styles.pageTitle}>{pageTitle}</span>
         </div>
 
-        <div className={styles.middle}>
-        <button onClick={routeFlashcards} className={styles.navButton}>
+        {/* Desktop Menu */}
+        <div className={styles.desktopMenu}>
+          <button onClick={routeFlashcards} className={styles.navButton}>
             Flashcards
           </button>
           <div className={styles.dropdown} ref={dropdownRef}>
@@ -191,12 +207,64 @@ export default function Header() {
               </ul>
             )}
           </div>
-
           <button onClick={routeResults} className={styles.navButton}>
             Resultater
           </button>
         </div>
 
+        {/* Mobile Burger Menu */}
+        <div className={styles.mobileMenu}>
+          <button onClick={toggleMobileMenu} className={styles.burgerButton}>
+            <i className="bi bi-list" style={{ fontSize: "24px" }}></i>
+          </button>
+          {isMobileMenuOpen && (
+            // Use the second ref for mobile dropdown
+            <div className={styles.mobileDropdown} ref={mobileDropdownRef}>
+              <button onClick={routeFlashcards} className={styles.navButton}>
+                Flashcards
+              </button>
+              <div className={styles.dropdown}>
+                <button onClick={toggleDropdown} className={styles.navButton}>
+                  Eksamener
+                </button>
+                {isDropdownOpen && (
+                  <ul className={styles.dropdownMenu}>
+                    <li>
+                      <Link href="/eksamen1" onClick={closeDropdown}>
+                        Eksamen 1
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/eksamen2" onClick={closeDropdown}>
+                        Eksamen 2
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/eksamen3" onClick={closeDropdown}>
+                        Eksamen 3
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/eksamen4" onClick={closeDropdown}>
+                        Eksamen 4
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/eksamen5" onClick={closeDropdown}>
+                        Eksamen 5
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+              </div>
+              <button onClick={routeResults} className={styles.navButton}>
+                Resultater
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Right section */}
         <div className={styles.right}>
           <div style={{ margin: "1rem" }}>
             <DarkModeButton />

@@ -94,13 +94,6 @@
 /* =========================== */
 /* DARK MODE OVERRIDES        */
 /* =========================== */
-/* Using the palette:
-   - #f0f4f8 (lightest)
-   - #bcccdc
-   - #829ab1
-   - #486581
-   - #102a43 (darkest)
-*/
 :global(body.dark-mode) .pageWrapper {
   background-color: #102a43; 
   color: #f0f4f8; 
@@ -110,7 +103,6 @@
   background: url("../../public/Tenk.jpg") center/cover no-repeat;
 }
 
-/* Dark overlay for hero */
 :global(body.dark-mode) .heroOverlay {
   background-color: rgba(16, 42, 67, 0.6);
 }
@@ -134,4 +126,50 @@
   background-color: #486581;
   color: #f0f4f8;
   border-top: 1px solid #829ab1;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+
+/* For mobiltelefoner (maks 768px) */
+@media (max-width: 768px) {
+  .heroSection {
+    height: 250px;
+  }
+  
+  .heroOverlay h1 {
+    font-size: 2rem;
+  }
+  
+  .heroOverlay p {
+    font-size: 1rem;
+  }
+  
+  .featuresSection {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .featureCard {
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+}
+
+/* For nettbrett (mellom 769px og 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .heroSection {
+    height: 350px;
+  }
+  
+  .heroOverlay h1 {
+    font-size: 2.2rem;
+  }
+  
+  .heroOverlay p {
+    font-size: 1.05rem;
+  }
+  
+  .featuresSection {
+    gap: 1rem;
+  }
 }

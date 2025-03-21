@@ -4,7 +4,6 @@
   border-bottom: 1px solid #d0d7de;
 }
 
-
 .nav {
   display: flex;
   align-items: center;
@@ -24,7 +23,9 @@
   color: #24292f;
 }
 
-.middle {
+/* Desktop menu styles */
+.desktopMenu {
+  display: flex;
   gap: 1rem;
 }
 
@@ -63,7 +64,7 @@
   padding: 0.5rem 0;
   width: 150px;
   z-index: 9999;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .dropdownMenu li {
@@ -87,6 +88,25 @@
   background-color: #f3f4f6;
 }
 
+/* Mobile menu styles */
+.mobileMenu {
+  display: none;
+}
+
+.burgerButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobileDropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Right side and profile photo */
 .profilePhotoContainer {
   display: flex;
   align-items: center;
@@ -122,18 +142,7 @@
   color: #24292f;
 }
 
-/* ============================= */
-/* Dark Mode Overrides           */
-/* ============================= */
-/*
-  Using the palette:
-    - #f0f4f8 (lightest)
-    - #bcccdc
-    - #829ab1
-    - #486581
-    - #102a43 (darkest)
-*/
-
+/* Dark Mode Overrides */
 :global(body.dark-mode) .header {
   background-color: #486581; 
   border-bottom: 1px solid #829ab1;
@@ -189,8 +198,76 @@
   color: #f0f4f8;
 }
 
-:global(body.dark-mode) .footer {
-  background-color: #102a43;
-  border-top: 1px solid #829ab1;
-  color: #f0f4f8;
+/* Responsive Styles */
+
+/* For mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .desktopMenu {
+    display: none;
+  }
+  .mobileMenu {
+    display: block;
+  }
+  .header {
+    padding: 0.5rem;
+  }
+  
+  /* Remove/override these lines to keep everything in one row */
+  /* .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  } */
+  
+  /* Optional: If you want to keep them in one line, ensure you set: */
+  .nav {
+    flex-direction: row;         /* keep items in a row */
+    justify-content: space-between; /* spread them out */
+    align-items: center;
+  }
+  
+  .left,
+  .middle,
+  .right {
+    margin-bottom: 0; /* remove extra spacing */
+  }
+
+  .pageTitle {
+    font-size: 1rem;
+  }
+  .navButton,
+  .resultsLink {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
+  }
+  .dropdownMenu {
+    top: 2.5rem;
+    width: 100%;
+  }
+  .profilePhoto,
+  .profilePhotoPlaceholder {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+/* For tablets (min-width: 769px and max-width: 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    padding: 0.5rem 1rem;
+  }
+  .pageTitle {
+    font-size: 1.1rem;
+  }
+  .navButton,
+  .resultsLink {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.85rem;
+  }
+  .profilePhoto,
+  .profilePhotoPlaceholder {
+    width: 30px;
+    height: 30px;
+  }
 }

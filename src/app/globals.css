@@ -16,6 +16,14 @@ body {
   min-height: 100vh;
 }
 
+/* Juster fontstørrelse og layout på mindre skjermer */
+@media (max-width: 768px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
 .dark-mode-button {
   border: none;
   background: transparent;
