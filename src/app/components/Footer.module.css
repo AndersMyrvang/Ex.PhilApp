@@ -5,41 +5,60 @@
   border-bottom: 1px solid #d0d7de;
   font-family: sans-serif;
   font-size: 0.9rem;
-  text-align: center;
 }
 
-.footer p {
+/* 
+  1) Use Flexbox to place .footerLeft on the left 
+     and .socialMedia on the right. 
+  2) If you want them all on one row, ensure flex-wrap is 
+     set to "nowrap" (or leave it out). 
+*/
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* or 'nowrap' if you prefer a single row with overflow */
+}
+
+/* Left side: text and nav links */
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* or center, depending on your preference */
+}
+
+/* Adjust spacing as needed */
+.footerLeft p {
+  margin: 0.5rem 0;
+}
+.footerLeft nav {
   margin: 0.5rem 0;
 }
 
-.footer nav {
-  margin: 0.5rem 0;
-}
-
-.footer nav a {
+/* Nav links */
+.footerLeft nav a {
   color: #0366d6;
   text-decoration: none;
   margin: 0 0.5rem;
   transition: color 0.3s ease;
 }
-
-.footer nav a:hover {
+.footerLeft nav a:hover {
   text-decoration: underline;
   color: #024b9a;
 }
 
+/* Right side: social icons */
 .socialMedia {
-  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem; /* space between icons */
 }
 
+/* Optional: Adjust icon sizing or color if you like */
 .socialMedia a {
   color: #0366d6;
   text-decoration: none;
-  margin: 0 0.5rem;
-  font-size: 1.2rem;
   transition: color 0.3s ease;
 }
-
 .socialMedia a:hover {
   color: #024b9a;
 }
@@ -52,12 +71,12 @@
   color: #ffffff;
 }
 
-:global(body.dark-mode) .footer nav a,
+:global(body.dark-mode) .footerLeft nav a,
 :global(body.dark-mode) .socialMedia a {
   color: #c9d1d9;
 }
 
-:global(body.dark-mode) .footer nav a:hover,
+:global(body.dark-mode) .footerLeft nav a:hover,
 :global(body.dark-mode) .socialMedia a:hover {
   color: #a0aab8;
 }
