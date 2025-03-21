@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./login.module.css";
 import { auth } from "@/firebase/config";
-import { subscribeToAuthState, signUpWithEmail, signInWithGoogle } from "@/utils/firebaseAuth";
+import { subscribeToAuthState, signUpWithEmail } from "@/utils/firebaseAuth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 export default function Home() {
   const router = useRouter();
@@ -47,7 +48,9 @@ export default function Home() {
 
   const handleSignUpWithGoogle = async () => {
     try {
-      await signInWithGoogle();
+      const provider = new GoogleAuthProvider();
+      // Bruker signInWithPopup i stedet for signInWithRedirect
+      await signInWithPopup(auth, provider);
       alert("Logget inn med Google!");
       router.push("/");
     } catch (error: any) {
@@ -63,7 +66,8 @@ export default function Home() {
         <h1 className={styles.title}>ExPhil App</h1>
         <h2 className={styles.subtitle}>Create an account</h2>
 
-        {/* <form onSubmit={handleSignUpWithEmail} className={styles.form}>
+        {/*
+        <form onSubmit={handleSignUpWithEmail} className={styles.form}>
           <div>
             <label htmlFor="displayName" className={styles.label}>
               Display Name
@@ -118,7 +122,8 @@ export default function Home() {
           <hr className={styles.hr} />
           <span className={styles.hrText}>or continue with</span>
           <hr className={styles.hr} />
-        </div> */}
+        </div>
+        */}
 
         <button onClick={handleSignUpWithGoogle} className={styles.googleButton}>
           <svg className={styles.googleIcon} viewBox="0 0 533.5 544.3">

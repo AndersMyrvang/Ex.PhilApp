@@ -97,6 +97,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  color: black;
 }
 
 .mobileDropdown {
@@ -149,6 +150,10 @@
 }
 
 :global(body.dark-mode) .pageTitle {
+  color: #f0f4f8; 
+}
+
+:global(body.dark-mode) .burgerButton {
   color: #f0f4f8; 
 }
 
