@@ -9,7 +9,7 @@ export default function Footer() {
           <nav>
             <a href="/about">About</a> | 
             <a href="/contact">Contact</a> | 
-            <a href="/privacy">Privacy Policy</a>
+            <a href="/cookiePolicy">Cookie Policy</a>
           </nav>
         </div>
 

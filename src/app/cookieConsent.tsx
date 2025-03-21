@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { loadAnalytics } from "../firebase/config"; // Pass på at stien er korrekt
 
+
 const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
 
