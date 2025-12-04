@@ -42,12 +42,12 @@ html.dark-mode {
   background-color: #829ab1;
 }
 
-:global(.pageWrapper) {
+.pageWrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-:global(.mainContent) {
+.mainContent {
   flex: 1;
 }
